@@ -1,0 +1,1 @@
+export const posts = [{"slug":"functions-for-beginners","title":"Functions for Beginners"},{"slug":"solidjs-for-beginners","title":"SolidJS: A Beginners Guide"},{"slug":"tailwind-setup","title":"How to set up Tailwind CSS"},{"slug":"variables-in-python","title":"A simple introduction to Python variables"}]
