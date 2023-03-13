@@ -2,8 +2,13 @@ import { ImageResponse } from '@vercel/og';
 import { NextRequest } from 'next/server';
 
 export const config = {
-  runtime: 'experimental-edge',
+  runtime: 'edge',
 };
+
+// Make sure the font exists in the specified path:
+const font = fetch(new URL('@/public/fonts/PPNeueMachina-PlainRegular.otf', import.meta.url)).then(
+    (res) => res.arrayBuffer(),
+  );
 
 const backgrounds = [
     {
@@ -35,7 +40,8 @@ const backgrounds = [
 
   const randomBackgroundNumber = Math.floor(Math.random() * backgrounds.length);
 
-export default function(NextRequest) {
+export default async function(NextRequest) {
+    const fontData = await font;
     try {
         // 1: get the searchParams from the NextRequestuest URL
         const { searchParams } = new URL(NextRequest.url)
@@ -52,6 +58,8 @@ export default function(NextRequest) {
         const description = hasDescription
             ? searchParams.get("description")?.slice(0, 100)
             : "Some description"
+
+            //const fontData = font;
 
         return new ImageResponse(
             (
@@ -98,7 +106,7 @@ export default function(NextRequest) {
                         fontWeight: 700,
                         whiteSpace: 'pre-wrap',
                         background: '#fff',
-                        padding: '20px'
+                        padding: '20px',
                     }}
                 >
                     <b>{title}</b>
@@ -122,7 +130,14 @@ export default function(NextRequest) {
             ),
             {
                 width: 1200,
-                height: 600
+                height: 600,
+                fonts: [
+                    {
+                      name: 'Neue Machina',
+                      data: fontData,
+                      style: 'normal',
+                    },
+                ]
             }
     )
     } catch (e) {

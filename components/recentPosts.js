@@ -8,8 +8,8 @@ export default function RecentPosts({ posts }) {
         <SectionHeader title='Recent posts' href='#' />
         <div className='grid grid-cols-1 md:grid-cols-2 gap-6'>
         {
-			posts.map((post) => (
-				<Article key={post.slug} className='border-b-2' post={post} />
+			posts.map((post, index) => (
+				<Article key={index} className='border-b-2' post={post} />
 			)).slice(0, 2)
 		}
         </div>
