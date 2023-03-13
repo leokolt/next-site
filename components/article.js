@@ -18,7 +18,7 @@ export default function Article({ post }) {
         </h3>
       </Link>
       <span className='text-gray-600 mb-4 block'>
-        <time><Date dateString={post.date} /></time> | {post.tags.map(tag => getTagLink(tag)).reduce((prev, curr) => [prev, ', ', curr])}
+        <Date dateString={post.date} /> | {post.tags.map(tag => getTagLink(tag)).reduce((prev, curr) => [prev, ', ', curr])}
       </span>
       <p>{post.description}</p>
     </article>
