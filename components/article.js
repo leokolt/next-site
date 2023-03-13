@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Date from '@/lib/date';
 
 const getTagLink = (tag) => {
     return (
@@ -17,7 +18,7 @@ export default function Article({ post }) {
         </h3>
       </Link>
       <span className='text-gray-600 mb-4 block'>
-        <time>{post.date}</time> | {post.tags.map(tag => getTagLink(tag)).reduce((prev, curr) => [prev, ', ', curr])}
+        <time><Date dateString={post.date} /></time> | {post.tags.map(tag => getTagLink(tag)).reduce((prev, curr) => [prev, ', ', curr])}
       </span>
       <p>{post.description}</p>
     </article>

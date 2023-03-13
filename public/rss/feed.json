@@ -1,0 +1,54 @@
+{
+    "version": "https://jsonfeed.org/version/1",
+    "title": "Your Blog name",
+    "home_page_url": "http://localhost:3000",
+    "feed_url": "http://localhost:3000/rss/feed.json",
+    "description": "Your Blog description",
+    "icon": "http://localhost:3000/favicon.ico",
+    "author": {
+        "name": "John Doe",
+        "url": "https://twitter.com/<username>"
+    },
+    "items": [
+        {
+            "id": "http://localhost:3000/blog/functions-for-beginners",
+            "url": "http://localhost:3000/blog/functions-for-beginners",
+            "title": "Functions for Beginners",
+            "date_modified": "2022-12-01T00:00:00.000Z",
+            "author": {
+                "name": "John Doe",
+                "url": "https://twitter.com/<username>"
+            }
+        },
+        {
+            "id": "http://localhost:3000/blog/solidjs-for-beginners",
+            "url": "http://localhost:3000/blog/solidjs-for-beginners",
+            "title": "SolidJS: A Beginners Guide",
+            "date_modified": "2021-09-11T00:00:00.000Z",
+            "author": {
+                "name": "John Doe",
+                "url": "https://twitter.com/<username>"
+            }
+        },
+        {
+            "id": "http://localhost:3000/blog/tailwind-setup",
+            "url": "http://localhost:3000/blog/tailwind-setup",
+            "title": "How to set up Tailwind CSS",
+            "date_modified": "2021-09-01T19:00:00.000Z",
+            "author": {
+                "name": "John Doe",
+                "url": "https://twitter.com/<username>"
+            }
+        },
+        {
+            "id": "http://localhost:3000/blog/variables-in-python",
+            "url": "http://localhost:3000/blog/variables-in-python",
+            "title": "A simple introduction to Python variables",
+            "date_modified": "2021-07-24T19:00:00.000Z",
+            "author": {
+                "name": "John Doe",
+                "url": "https://twitter.com/<username>"
+            }
+        }
+    ]
+}

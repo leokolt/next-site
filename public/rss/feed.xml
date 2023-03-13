@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0">
+    <channel>
+        <title>Your Blog name</title>
+        <link>http://localhost:3000</link>
+        <description>Your Blog description</description>
+        <lastBuildDate>Mon, 13 Mar 2023 18:54:38 GMT</lastBuildDate>
+        <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
+        <generator>Feed for Node.js</generator>
+        <image>
+            <title>Your Blog name</title>
+            <url>http://localhost:3000/favicon.ico</url>
+            <link>http://localhost:3000</link>
+        </image>
+        <copyright>All rights reserved 2023, Jatin Sharma</copyright>
+        <item>
+            <title><![CDATA[Functions for Beginners]]></title>
+            <link>http://localhost:3000/blog/functions-for-beginners</link>
+            <guid>http://localhost:3000/blog/functions-for-beginners</guid>
+            <pubDate>Thu, 01 Dec 2022 00:00:00 GMT</pubDate>
+            <author>example@gmail.com (John Doe)</author>
+        </item>
+        <item>
+            <title><![CDATA[SolidJS: A Beginners Guide]]></title>
+            <link>http://localhost:3000/blog/solidjs-for-beginners</link>
+            <guid>http://localhost:3000/blog/solidjs-for-beginners</guid>
+            <pubDate>Sat, 11 Sep 2021 00:00:00 GMT</pubDate>
+            <author>example@gmail.com (John Doe)</author>
+        </item>
+        <item>
+            <title><![CDATA[How to set up Tailwind CSS]]></title>
+            <link>http://localhost:3000/blog/tailwind-setup</link>
+            <guid>http://localhost:3000/blog/tailwind-setup</guid>
+            <pubDate>Wed, 01 Sep 2021 19:00:00 GMT</pubDate>
+            <author>example@gmail.com (John Doe)</author>
+        </item>
+        <item>
+            <title><![CDATA[A simple introduction to Python variables]]></title>
+            <link>http://localhost:3000/blog/variables-in-python</link>
+            <guid>http://localhost:3000/blog/variables-in-python</guid>
+            <pubDate>Sat, 24 Jul 2021 19:00:00 GMT</pubDate>
+            <author>example@gmail.com (John Doe)</author>
+        </item>
+    </channel>
+</rss>
