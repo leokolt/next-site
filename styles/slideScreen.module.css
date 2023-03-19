@@ -1,0 +1,81 @@
+.menuBtn {
+    z-index: 99;
+    position: relative;
+}
+
+.menuBtn.active {
+    position: relative;
+}
+
+.slideScreen {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: var(--color-accent);
+    transition: .35s;
+    transform: translateX(100%);
+    z-index: 9;
+}
+
+.slideScreen.show {
+    transform: translateX(0);
+}
+
+.burger {
+    width: 26px;
+    height: 5px;
+    display: block;
+    background: var(--color-text-primary);
+    transition: .2s;
+    opacity: 1;
+    position: relative;
+}
+
+.burger:before {
+    content: '';
+    width: 26px;
+    height: 5px;
+    display: block;
+    background: var(--color-text-primary);
+    position: absolute;
+    top: -8px;
+    left: 0;
+    transition: .2s;
+}
+
+.burger:after {
+    content: '';
+    width: 26px;
+    height: 5px;
+    display: block;
+    background: var(--color-text-primary);
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    transition: .2s;
+}
+
+.menuBtn.active .burger {
+    background: unset;
+}
+
+.menuBtn.active .burger:before {
+    transform: rotateZ(45deg);
+    top: 0;
+}
+
+.menuBtn.active .burger:after {
+    transform: rotateZ(-45deg);
+    bottom: 0;
+}
+
+.slideScreen:before {
+    content: '';
+    background: var(--color-accent);
+    position: relative;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}

@@ -1,7 +1,7 @@
 import { getAllPosts, getPostBySlug } from "@/lib/getAllData";
 import Head from 'next/head'
-// import { serialize } from 'next-mdx-remote/serialize';
-// import { MDXRemote } from 'next-mdx-remote';
+import { serialize } from 'next-mdx-remote/serialize';
+import { MDXRemote } from 'next-mdx-remote';
 
 
 export async function getStaticPaths() {
@@ -21,10 +21,16 @@ export async function getStaticPaths() {
 
   export async function getStaticProps({ params: { slug } }) {
     const post = getPostBySlug(slug);
+	const mdxSource = await serialize(post.content);
     return {
-      props: post,
+      props: {
+		//post,
+		frontmatter: post,
+		content: mdxSource
+	  }
     };
   }
+
 
   export default function PostPage({ frontmatter, content }) {
     return (
@@ -41,7 +47,8 @@ export async function getStaticPaths() {
 				<div className='max-w-4xl mx-auto py-12'>
 				<div className='prose mx-auto'>
 					<h1>{frontmatter.title}</h1>
-					<div>{content}</div>
+					{/* <div>{content}</div> */}
+          	<MDXRemote {...content}  />
 				</div>
 				</div>
 			</section>

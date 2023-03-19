@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0">
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/">
     <channel>
         <title>Your Blog name</title>
         <link>http://localhost:3000</link>
         <description>Your Blog description</description>
-        <lastBuildDate>Mon, 13 Mar 2023 18:54:38 GMT</lastBuildDate>
+        <lastBuildDate>Sun, 19 Mar 2023 09:04:06 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>Feed for Node.js</generator>
         <image>
@@ -18,6 +18,8 @@
             <link>http://localhost:3000/blog/functions-for-beginners</link>
             <guid>http://localhost:3000/blog/functions-for-beginners</guid>
             <pubDate>Thu, 01 Dec 2022 00:00:00 GMT</pubDate>
+            <description><![CDATA[Learn how to create and use functions]]></description>
+            <content:encoded><![CDATA[Learn how to create and use functions]]></content:encoded>
             <author>example@gmail.com (John Doe)</author>
         </item>
         <item>
@@ -25,20 +27,26 @@
             <link>http://localhost:3000/blog/solidjs-for-beginners</link>
             <guid>http://localhost:3000/blog/solidjs-for-beginners</guid>
             <pubDate>Sat, 11 Sep 2021 00:00:00 GMT</pubDate>
+            <description><![CDATA[Here's an introduction to SolidJS]]></description>
+            <content:encoded><![CDATA[Here's an introduction to SolidJS]]></content:encoded>
             <author>example@gmail.com (John Doe)</author>
         </item>
         <item>
             <title><![CDATA[How to set up Tailwind CSS]]></title>
             <link>http://localhost:3000/blog/tailwind-setup</link>
             <guid>http://localhost:3000/blog/tailwind-setup</guid>
-            <pubDate>Wed, 01 Sep 2021 19:00:00 GMT</pubDate>
+            <pubDate>Thu, 02 Sep 2021 00:00:00 GMT</pubDate>
+            <description><![CDATA[Here's a short guide on setting up Tailwind CSS]]></description>
+            <content:encoded><![CDATA[Here's a short guide on setting up Tailwind CSS]]></content:encoded>
             <author>example@gmail.com (John Doe)</author>
         </item>
         <item>
             <title><![CDATA[A simple introduction to Python variables]]></title>
             <link>http://localhost:3000/blog/variables-in-python</link>
             <guid>http://localhost:3000/blog/variables-in-python</guid>
-            <pubDate>Sat, 24 Jul 2021 19:00:00 GMT</pubDate>
+            <pubDate>Sat, 19 Jun 2021 00:00:00 GMT</pubDate>
+            <description><![CDATA[Let's learn about Python variables]]></description>
+            <content:encoded><![CDATA[Let's learn about Python variables]]></content:encoded>
             <author>example@gmail.com (John Doe)</author>
         </item>
     </channel>

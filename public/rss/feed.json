@@ -12,8 +12,10 @@
     "items": [
         {
             "id": "http://localhost:3000/blog/functions-for-beginners",
+            "content_html": "Learn how to create and use functions",
             "url": "http://localhost:3000/blog/functions-for-beginners",
             "title": "Functions for Beginners",
+            "summary": "Learn how to create and use functions",
             "date_modified": "2022-12-01T00:00:00.000Z",
             "author": {
                 "name": "John Doe",
@@ -22,8 +24,10 @@
         },
         {
             "id": "http://localhost:3000/blog/solidjs-for-beginners",
+            "content_html": "Here's an introduction to SolidJS",
             "url": "http://localhost:3000/blog/solidjs-for-beginners",
             "title": "SolidJS: A Beginners Guide",
+            "summary": "Here's an introduction to SolidJS",
             "date_modified": "2021-09-11T00:00:00.000Z",
             "author": {
                 "name": "John Doe",
@@ -32,9 +36,11 @@
         },
         {
             "id": "http://localhost:3000/blog/tailwind-setup",
+            "content_html": "Here's a short guide on setting up Tailwind CSS",
             "url": "http://localhost:3000/blog/tailwind-setup",
             "title": "How to set up Tailwind CSS",
-            "date_modified": "2021-09-01T19:00:00.000Z",
+            "summary": "Here's a short guide on setting up Tailwind CSS",
+            "date_modified": "2021-09-02T00:00:00.000Z",
             "author": {
                 "name": "John Doe",
                 "url": "https://twitter.com/<username>"
@@ -42,9 +48,11 @@
         },
         {
             "id": "http://localhost:3000/blog/variables-in-python",
+            "content_html": "Let's learn about Python variables",
             "url": "http://localhost:3000/blog/variables-in-python",
             "title": "A simple introduction to Python variables",
-            "date_modified": "2021-07-24T19:00:00.000Z",
+            "summary": "Let's learn about Python variables",
+            "date_modified": "2021-06-19T00:00:00.000Z",
             "author": {
                 "name": "John Doe",
                 "url": "https://twitter.com/<username>"
