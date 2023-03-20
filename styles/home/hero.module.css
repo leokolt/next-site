@@ -1,0 +1,9 @@
+.hero {
+    padding: 150px 0 50px;
+    margin-top: -96px;
+}
+
+.heroInner {
+    display: flex;
+    align-items: center;
+}

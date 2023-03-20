@@ -18,15 +18,30 @@
     filter: invert(.4);
 }
 
+.headerNav {
+    padding: 15% 0;
+}
+
 .headerMenu {
     list-style: none;
     display: flex;
     gap: 20px;
+    flex-direction: column;
 }
 
 
 .headerMenu li {
-    font-size: 20px;
+    font-size: 50px;
+    font-weight: 900;
+}
+
+.headerMenu a {
+    transition: .35s;
+    color: #494949;
+}
+
+.headerMenu a:hover {
+    color: #f7f7f7;
 }
 
 .headerActions {

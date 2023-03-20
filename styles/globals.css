@@ -26,7 +26,10 @@
   margin: 0;
 }
 
-html,
+html {
+	scrollbar-gutter: stable;
+}
+
 body {
   max-width: 100vw;
   overflow-x: hidden;
@@ -58,6 +61,11 @@ button {
 	max-width: 1230px;
 	padding: 0 15px;
 	margin: 0 auto;
+}
+
+body.isSlideActive {
+	overflow-y: hidden;
+	scrollbar-gutter: stable;
 }
 
 /*глобальные компоненты*/

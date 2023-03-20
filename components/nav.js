@@ -13,7 +13,7 @@ const Nav = () => {
                 {routes.map((route, i) => {
                     return (
                         <li key={route} className={`${router.pathname === `/${route.toLowerCase()}` && 'text-red-400'}`}>
-                            <Link href={`/${route.toLowerCase()}`}>{routesRu[i]}</Link>
+                            <Link href={`/${route.toLowerCase()}`} >{routesRu[i]}</Link>
                         </li>
                     )
                 })}
