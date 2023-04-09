@@ -1,18 +1,44 @@
 {
 	"work": [
-	{
-		"title": "Example piece one",
-		"image": "/images/photo.png",
-		"year": 2022,
-		"category": "Dashboard",
-		"description": "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet."
-	},
-	{
-		"title": "Example piece two",
-		"image": "/images/photo.png",
-		"year": 2022,
-		"category": "Backend",
-		"description": "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet."
-	}
+		{
+			"title": "Сайт для оплаты Steam из России",
+			"image": "/images/works/st.jpg",
+			"year": 2023,
+			"category": "WordPress",
+			"link": "https://pay4steam.ru/",
+			"description": "Санкции создали ряд проблем в различных сферах жизни страны, в том числе любителям игр. Данный проект решает их проблему. С помощью него можно пополнить свой кошелек Steam картой российского банка"
+		},
+		{
+			"title": "Example piece two",
+			"image": "/images/photo.png",
+			"year": 2022,
+			"category": "Backend",
+			"link": "https://academperevod.ru/",
+			"description": "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet."
+		},
+		{
+			"title": "Сайт студии переводов «АкадемПеревод»",
+			"image": "/images/works/ap.jpg",
+			"year": 2022,
+			"category": "WordPress",
+			"link": "https://academperevod.ru/",
+			"description": "Осовременивали сайт, не перезжая с Wordpress на другие платформы. В основе проекта - дизайн в Фигме и редактор Elementor. Сложная, долгая и кропотливая работа"
+		},
+		{
+			"title": "Сайт сервиса покупки подарочных карт Apple в России",
+			"image": "/images/works/ka.jpg",
+			"year": 2023,
+			"category": "WordPress",
+			"link": "https://kartaapple.ru/",
+			"description": "Созданный на чистом WordPress без пейдж-билдеров сайт, помогает людям приобретать контент в онлайн-магазинах Apple. Программисты создали функционал автоматической рассылки кодов при оплате на сайте. Мной сайт был сверстан и «натянут» на WordPress, продолжает дорабатываться и поддерживаться"
+		},
+		{
+			"title": "Сайт аренды офисов в Москва Сити",
+			"image": "/images/works/co.jpg",
+			"year": 2023,
+			"category": "Ghost CMS",
+			"link": "https://cityonly.ru/",
+			"description": "Заказчик хотел сделать сайт на неспецифичном для подобных проектов движке - Ghost CMS. Несмотря на все сложности, проект был сдан вовремя и приносит пользу владельцам и клиентам"
+		}
 	]
 }

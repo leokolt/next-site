@@ -12,10 +12,10 @@
     "items": [
         {
             "id": "http://localhost:3000/blog/functions-for-beginners",
-            "content_html": "Learn how to create and use functions",
+            "content_html": "Мы, русские, часто сталкиваемся с неприятностями в разных областях жизни. И, да, этот пост не о политике, а о нашем родном языке и буковках",
             "url": "http://localhost:3000/blog/functions-for-beginners",
-            "title": "Functions for Beginners",
-            "summary": "Learn how to create and use functions",
+            "title": "Транслитезация кириллицы на JS в виде компонента React",
+            "summary": "Мы, русские, часто сталкиваемся с неприятностями в разных областях жизни. И, да, этот пост не о политике, а о нашем родном языке и буковках",
             "date_modified": "2022-12-01T00:00:00.000Z",
             "author": {
                 "name": "John Doe",

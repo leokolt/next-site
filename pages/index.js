@@ -1,8 +1,10 @@
-import Head from 'next/head'
+//import siteMetadata from "@/lib/siteMetadata";
+import Seo from "@/components/global/seo";
 import RecentPosts from "../components/recentPosts";
-import FeaturedWork from "../components/featuredWork";
+import FeaturedWork from "../components/home/featuredWork";
 import Search from '@/components/search';
 import Hero from '@/components/home/hero'
+import Profs from '@/components/home/profs';
 
 import {getAllPosts, getAllWork} from "@/lib/getAllData";
 
@@ -12,22 +14,27 @@ export async function getStaticProps() {
 
 	return {
 		props: {
-		posts,
-		work,
+			posts,
+			work,
 		},
 	};
 }
 
 export default function Home({posts, work}) {
 	return (
-		<div>
-		<Head>
-
-		</Head>
+		<>
+            <Seo
+                title={`Веб-разработчик Леонид Колтан`}
+                description={`Создаю сайты. Быстро, недорого. Красиво и выгодно`}
+                ogType={"website"}
+				ogImageUrl={`http://localhost:3000/api/og?title=Веб-разработчик Леонид Колтан&description=Создаю сайты. Быстро, недорого. Красиво и выгодно`}
+            />
 			<Hero />
+			<Profs />
+			<FeaturedWork work={work} />
 			<Search />
 			<RecentPosts posts={posts} />
-			<FeaturedWork work={work} />
-		</div>
+
+		</>
 	)
 }

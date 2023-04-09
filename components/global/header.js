@@ -1,6 +1,6 @@
 import Link from "next/link";
-import ThemeToggle from "./themeSwitcher";
-import SlideScreen from "./slideScreen";
+import ThemeToggle from "@/components/themeSwitcher";
+import SlideScreen from "@/components//slideScreen";
 import styles from "@/styles/header.module.css"
 
 export default function Header() {

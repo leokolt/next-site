@@ -3,6 +3,9 @@ import {getAllPosts, getAllPostsByTag} from "@/lib/getAllData";
 import Head from "next/head";
 import Article from "@/components/article";
 
+import { transliterate } from '@/lib/transletter';
+const _ = require("lodash")
+
 export async function getStaticPaths() {
     const posts = getAllPosts();
     const tags = new Set(posts.flatMap((post) => post.tags));
@@ -11,7 +14,7 @@ export async function getStaticPaths() {
         paths: [...tags].map((tag) => {
             return {
                 params: {
-                    tag
+                    tag:  _.kebabCase( transliterate( tag ) )
                 }
             }
         }),
@@ -29,6 +32,8 @@ export async function getStaticProps({ params: { tag } }) {
         },
     };
 }
+
+
 
 export default function Tag({ posts, tag }) {
 

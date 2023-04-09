@@ -1,22 +1,15 @@
-import { useState, useEffect  } from "react";
+import { useState  } from "react";
 import styles from "@/styles/slideScreen.module.css"
-import Link from "next/link";
-import {useRouter} from "next/router";
-import stylesHeader from "@/styles/header.module.css"
+import Nav from "./nav";
+
+import useSlideScreen from '@/hooks/useSlideScreen'
 
 const SlideScreen = () => {
-    const [slideScreenActive, setSlideScreenActive] = useState(false)
-
-    const router = useRouter();
-    const routes = ['Blog', 'Work', 'Contact'];
-    const routesRu = ['Блог', 'Работы', 'Контакты'];
+    const [slideScreenActive, setSlideScreenActive] = useState(false);
+    useSlideScreen(slideScreenActive, setSlideScreenActive);
 
     const menuBtnClasses = [styles.menuBtn, "mainBtn", slideScreenActive ?  `${styles.active}`  : null].join(" ")
     const slideScreenClasses = [slideScreenActive ?  `${styles.slideScreen} ${styles.show}`  : `${styles.slideScreen}`, "dotsBg"].join(" ")
-
-    useEffect(() => {
-        document.body.className = slideScreenActive ?  'isSlideActive'  : ''
-    });
 
     return (
         <>
@@ -30,17 +23,9 @@ const SlideScreen = () => {
             </button>
             <div className={slideScreenClasses}>
                 <div className="wrapper">
-                    <nav className={stylesHeader.headerNav}>
-                        <ul className={stylesHeader.headerMenu}>
-                            {routes.map((route, i) => {
-                                return (
-                                    <li key={route} className={`${router.pathname === `/${route.toLowerCase()}` && 'text-red-400'}`}>
-                                        <Link href={`/${route.toLowerCase()}`} onClick={() => { setSlideScreenActive(!slideScreenActive) }}>{routesRu[i]}</Link>
-                                    </li>
-                                )
-                            })}
-                        </ul>
-                    </nav>
+                    <Nav slideScreenActive={slideScreenActive}
+            setSlideScreenActive={setSlideScreenActive}
+                    />
                 </div>
             </div>
         </>
