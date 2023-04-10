@@ -1,7 +1,15 @@
-:root, :root[data-theme="light"] {
+:root {
 	--font-mono: ui-monospace, Menlo, Monaco, 'Cascadia Mono', 'Segoe UI Mono',
-		'Roboto Mono', 'Oxygen Mono', 'Ubuntu Monospace', 'Source Code Pro',
-		'Fira Mono', 'Droid Sans Mono', 'Courier New', monospace;
+	'Roboto Mono', 'Oxygen Mono', 'Ubuntu Monospace', 'Source Code Pro',
+	'Fira Mono', 'Droid Sans Mono', 'Courier New', monospace;
+	--h1: 36px;
+	--h2: 30px;
+	--h3: 26px;
+	--h4: 24px;
+	--p: 16px;
+}
+
+:root, :root[data-theme="light"] {
 	--color-text-primary: #494949;
 	--color-text-secondary: #076963;
 	--color-bg-primary: #f7f7f7;
@@ -9,10 +17,8 @@
 	--color-accent-secondary: #1F51A3;
 	/* --color-bg-toggle: #1e90ff; */
 
-	--h1: 68px;
-	--h2: 46px;
-	--h3: 30px;
-	--p: 20px;
+
+
 }
 
 @media (prefers-color-scheme: dark) {
@@ -21,6 +27,17 @@
 		--color-text-secondary: #ff6b00;
 		--color-bg-primary: #292929;
 		--color-bg-toggle: #a9a9a9;
+	}
+}
+
+/* @media */
+@media(min-width: 1200px) {
+	:root {
+		--h1: 68px;
+		--h2: 46px;
+		--h3: 30px;
+		--h4: 20px;
+		--p: 20px;
 	}
 }
 
@@ -44,6 +61,10 @@ body {
   background: var(--color-bg-primary);
   font-size: 20px;
   line-height: 1.6;
+}
+
+main {
+    overflow-x: hidden;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -96,7 +117,7 @@ body.isSlideActive {
     z-index: 1;
     background-color: var(--color-bg-primary);
 	color: var(--color-text-primary);
-    font-size: 20px;
+    font-size: var(--p);
     padding: 10px 20px;
     cursor: pointer;
 	position: relative;
@@ -183,3 +204,14 @@ body.isSlideActive {
 .stripesBg {
 	background: repeating-linear-gradient(45deg, var(--color-text-primary) 0, var(--color-text-primary) 5px, transparent  5px, transparent 10px);
 }
+
+
+/*
+Точка останова              Цель
+----------------------      -------------------------------------
+(по умолчанию)	            Мобильный портрет
+min-width:480px	            Мобильный-ландшафтный (и крупнее)
+min-width:768px	            Планшет-портрет (и крупнее)
+min-width:992px	            Планшет-ландшафт (и крупнее)
+min-width:1200px	        Ноутбуки (и крупнее)
+*/

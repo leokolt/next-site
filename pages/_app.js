@@ -4,6 +4,7 @@ import { ThemeProvider } from 'next-themes'
 import localFont from 'next/font/local'
 import Layout from '@/components/layout'
 
+
 // const font = Rubik({
 // 	subsets: ['latin', 'cyrillic'],
 // })
@@ -13,6 +14,7 @@ const font = localFont({
 	  {
 		path: '../public/fonts/Onest-Regular.woff',
 		weight: '400',
+
 	  },
 	  {
 		path: '../public/fonts/Onest-Regular.woff2',
@@ -27,6 +29,7 @@ const font = localFont({
 		weight: '900',
 	  },
 	],
+	variable: '--onest-font'
   });
 
 export default function App({ Component, pageProps }) {

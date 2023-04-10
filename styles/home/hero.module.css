@@ -5,6 +5,8 @@
 
 .heroInner {
     display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
     align-items: center;
 }
 
@@ -15,6 +17,10 @@
 .heroInnerRight {
     text-align: center;
     animation: rotate 1s cubic-bezier(.5,2.5,.7,.7);
+}
+
+.heroInnerRight > img {
+    width: 70%;
 }
 
 @keyframes rotate {
@@ -28,8 +34,6 @@
         transform:rotate(-360deg);
     }
 }
-
-
 
 .heroTitle {
     font-size: var(--h1);
@@ -62,3 +66,20 @@
         transform: translateX(-50%)
     }
 }
+
+
+@media(min-width: 1200px) {
+    .heroInner {
+        flex-direction: row;
+    }
+}
+
+/*
+Точка останова              Цель
+----------------------      -------------------------------------
+(по умолчанию)	            Мобильный портрет
+min-width:480px	            Мобильный-ландшафтный (и крупнее)
+min-width:768px	            Планшет-портрет (и крупнее)
+min-width:992px	            Планшет-ландшафт (и крупнее)
+min-width:1200px	        Ноутбуки (и крупнее)
+*/
