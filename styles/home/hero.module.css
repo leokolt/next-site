@@ -72,6 +72,10 @@
     .heroInner {
         flex-direction: row;
     }
+
+    .heroTitle {
+        font-size: 60px;
+    }
 }
 
 /*
