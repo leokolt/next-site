@@ -21,12 +21,12 @@ const font = localFont({
 		weight: '400',
 	  },
 	  {
-		path: '../public/fonts/Onest-Black.woff',
-		weight: '900',
+		path: '../public/fonts/Onest-Bold.woff',
+		weight: '700',
 	  },
 	  {
-		path: '../public/fonts/Onest-Black.woff2',
-		weight: '900',
+		path: '../public/fonts/Onest-Bold.woff2',
+		weight: '700',
 	  },
 	],
 	variable: '--onest-font'

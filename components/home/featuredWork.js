@@ -1,3 +1,4 @@
+import Link from "next/link";
 import Work from "../work";
 import styles from "@/styles/home/featuredWork.module.css"
 
@@ -11,6 +12,7 @@ export default function FeaturedWork({work}) {
                         <Work key={workItem.title} item={workItem} />
                     ))}
                 </div>
+                <Link href='/work' className='loadBtn mainBtn'>Смотреть все работы</Link>
             </div>
         </section>
     )

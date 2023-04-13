@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@formspree/react": "^2.4.1",
     "@vercel/og": "^0.4.0",
     "date-fns": "^2.29.3",
     "feed": "^4.2.2",

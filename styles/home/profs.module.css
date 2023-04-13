@@ -8,6 +8,12 @@
     gap: 30px;
 }
 
+@supports (-webkit-touch-callout: none) and (not (translate: none)) {
+    .profsInner > *:not(:last-child) {
+      margin-right: 30px;
+    }
+  }
+
 .profsInner > * {
     flex: 0 0 100%;
 }
@@ -19,13 +25,11 @@
     padding: 30px 25px;
 }
 
-.profsItem > svg {
-    width: 150px;
-    height: 150px;
-    display: block;
-    margin: auto;
+.profsSymbol {
+    font-size: var(--h1);
+    text-align: center;
+    margin-bottom: 50px;
 }
-
 
 /* .profsItem > svg path {
     fill: var(--color-text-primary)

@@ -33,7 +33,7 @@ const Hero = () => {
             </section>
             <section className={styles.techsScroll}>
                 <div className={styles.techsScrollText}>
-                    —HTML—JS—Jquery—CSS—WordPress—Tilda—SCSS—ReactJS—Gatsby—NextJS—php
+                    * HTML * JS * Jquery * CSS * WordPress * Tilda * SCSS * ReactJS * Gatsby * NextJS * php&nbsp;
                 </div>
             </section>
         </>

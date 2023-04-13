@@ -65,9 +65,9 @@ export default function WorkPage({work}) {
                         ))}
                     </div>
                     {hasMore ? (
-                        <div><button onClick={handleLoadMore}>Еще статьи</button></div>
+                        <div><button className="mainBtn loadBtn" onClick={handleLoadMore}>Больше работ</button></div>
                         ) : (
-                        <div><button disabled>Больше нет статей</button></div>
+                        <div><button className="mainBtn loadBtn" disabled>Больше нет работ</button></div>
                     )}
                 </div>
             </section>

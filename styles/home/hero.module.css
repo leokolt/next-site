@@ -41,9 +41,7 @@
 
 .techsScroll {
     padding: 24px 0;
-    display: inline-block;
     overflow: hidden;
-    /* background-color: #494949; */
 }
 
 .techsScrollText {
@@ -52,18 +50,19 @@
     white-space: nowrap;
     animation: scrollLine 15s infinite linear;
     font-size: var(--h2);
+    display: inline-block;
 }
 
 .techsScrollText:after {
-    content: '—HTML—JS—Jquery—CSS—WordPress—Tilda—SCSS—ReactJS—Gatsby—NextJS—php';
+    content: '* HTML * JS * Jquery * CSS * WordPress * Tilda * SCSS * ReactJS * Gatsby * NextJS * php';
 }
 
 @keyframes scrollLine {
     0% {
-        transform: translateX(0)
+        transform: translate3d(0, 0, 0);
     }
     100% {
-        transform: translateX(-50%)
+        transform: translate3d(-50%, 0, 0);
     }
 }
 
