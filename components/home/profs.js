@@ -5,11 +5,12 @@ import styles from "@/styles/home/profs.module.css"
 const Profs = () => {
 
     const profsClasses = [styles.profs, "stripesBg"].join(" ")
+    const sectionTitleClasses = [styles.sectionTitle, "sectionTitle"].join(" ")
 
     return (
         <section className={profsClasses}>
-            <div className="wrapper">
-                <h2 className="sectionTitle">Смотри, что могу</h2>
+            <div className="wrapperScroll">
+                <h2 className={sectionTitleClasses}>Смотри, что могу</h2>
                 <div className={styles.profsInner}>
                     <div className={styles.profsItem}>
                         <div className={styles.profsSymbol}>* html *</div>

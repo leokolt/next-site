@@ -104,6 +104,11 @@ button {
 	margin: 0 auto;
 }
 
+.wrapperScroll {
+	max-width: 1230px;
+	margin: 0 auto;
+}
+
 body.isSlideActive {
 	overflow-y: hidden;
 	scrollbar-gutter: stable;
@@ -232,6 +237,10 @@ body.isSlideActive {
 @media(min-width: 992px) {
 	.sectionTitle {
 		width: 50%;
+	}
+
+	.wrapperScroll {
+		padding: 0 15px;
 	}
 }
 

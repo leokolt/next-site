@@ -7,6 +7,7 @@ import Hero from '@/components/home/hero'
 import Profs from '@/components/home/profs';
 import Contacts from "@/components/global/contacts";
 import Benefits from "@/components/home/benefits";
+import Reviews from "@/components/home/reviews";
 
 import {getAllPosts, getAllWork} from "@/lib/getAllData";
 
@@ -36,6 +37,7 @@ export default function Home({posts, work}) {
 			<FeaturedWork work={work} />
 			<Contacts description="Если тебя заинтересовали мои проекты, ты хочешь пострудничать или ебанутсу, используй мои контакты или форму для связи" />
 			<Benefits/>
+			<Reviews />
 			<Search />
 			<RecentPosts posts={posts} />
 

@@ -2,10 +2,9 @@
     padding: 50px 0;
 }
 
-.profsInner {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 30px;
+.sectionTitle {
+    margin: 0 15px 50px;
+    width: calc(100% - 30px);
 }
 
 @supports (-webkit-touch-callout: none) and (not (translate: none)) {
@@ -17,6 +16,29 @@
 .profsInner > * {
     flex: 0 0 100%;
 }
+
+.profsInner {
+    display: flex;
+    flex-wrap: wrap;
+    /* gap: 30px; */
+}
+
+.profsInner {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    height: 100%;
+    padding-bottom: 5px;
+    scroll-snap-type: x mandatory;
+    scroll-padding-left: 15px;
+    scroll-padding-right: 15px;
+}
+
+.profsItem {
+    scroll-snap-align: start;
+    max-width: 80%;
+    margin: 0 15px;
+}
+
 
 .profsItem {
     border: 4px solid var(--color-text-primary);
@@ -31,21 +53,45 @@
     margin-bottom: 50px;
 }
 
-/* .profsItem > svg path {
-    fill: var(--color-text-primary)
-} */
-
-
 .profsItemTitle {
     font-size: var(--h3);
     text-align: center;
     margin-top: 20px;
 }
 
+.profsInner {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    height: 100%;
+    padding-bottom: 5px;
+    --webkit-overflow-scrolling: touch;
+}
 
-@media(min-width: 768px) {
+
+.profsInner::-webkit-scrollbar {
+    width: 0;
+    display: none;
+}
+
+
+@media(min-width: 992px) {
+    .profsInner {
+        flex-wrap: wrap;
+        overflow-x: unset;
+        padding-bottom: 0;
+        gap: 30px;
+    }
+
     .profsInner > * {
-        flex: 0 0 calc(50% - 15px)
+        flex: 0 0 calc(50% - 15px);
+        scroll-snap-align: unset;
+        max-width: 100%;
+        margin: 0;
+    }
+
+    .sectionTitle {
+        margin: 0 0 50px;
+        width: 50%;
     }
 }
 

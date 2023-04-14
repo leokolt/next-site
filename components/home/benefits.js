@@ -22,7 +22,7 @@ export default function Benefits () {
     const benefitsClasses = [styles.benefits, "dotsBg"].join(" ")
 
     return (
-        <div className={benefitsClasses}>
+        <section className={benefitsClasses}>
             <div className="wrapper">
                 <div className={styles.benefitsInner}>
                     <div className={styles.benefitsTab}>
@@ -32,13 +32,14 @@ export default function Benefits () {
                                 className={`${tabItemClasses} ${i === active ? styles.tabItemActive : ''}`}
                                 onClick={openTab}
                                 data-index={i}
+                                key={i}
                             >{n.title}</h3>
                         ))}
                     </div>
 
                     <div className={styles.benefitsTabContent}>
                         {items.map((n, i) => (
-                            <div className={`${styles.tabContentItem} ${i === active ? styles.tabContentItemActive : ''}`} data-index={i}>
+                            <div className={`${styles.tabContentItem} ${i === active ? styles.tabContentItemActive : ''}`} data-index={i} key={i}>
                                 <p>{n.content}</p>
                             </div>
                         ))}
@@ -46,6 +47,6 @@ export default function Benefits () {
                 </div>
 
             </div>
-        </div>
+        </section>
     );
 }

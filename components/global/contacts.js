@@ -32,10 +32,10 @@ export default function Contacts({description}) {
                 </div>
             </div>
             <div className={styles.contactsBgs}>
-                <svg xmlns="http://www.w3.org/2000/svg" className={styles.contactsBgs1} width="80" height="60"><path fill="#494949" fill-rule="evenodd" d="M0 20v40h26.033C55.844 60 80 32.309 80 0H40c0 10.862-9.978 20-20 20H0Z"/></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" className={styles.contactsBgs1} width="80" height="60"><path fill="#494949" fillRule="evenodd" d="M0 20v40h26.033C55.844 60 80 32.309 80 0H40c0 10.862-9.978 20-20 20H0Z"/></svg>
                 <svg xmlns="http://www.w3.org/2000/svg" className={styles.contactsBgs2} viewBox="0 0 160 172.3" width="80" height="60"><path d="M143 1h-40v34L15 87.1 143 161v-39.9l-58.3-34L143 53.3z" fill="#F65F59"/></svg>
-                <svg xmlns="http://www.w3.org/2000/svg" className={styles.contactsBgs3} width="80" height="40"><g fill="#1F51A3" fill-rule="evenodd"><path d="M0 10 9.896 0H4.418L0 5zM0 28 26.896 0h-5.478L0 22zM7 40 44.896 0h-5.478L1 40zM24 40 61.896 0h-5.478L18 40zM41 40 78.896 0h-5.478L35 40zM58 40l22-23v-6L52 40zM75 40l5-5v-6L69 40z"/></g></svg>
-                <svg xmlns="http://www.w3.org/2000/svg" className={styles.contactsBgs4} width="140" height="120"><path fill="#F65F59" fill-rule="evenodd" d="M60 0v40c-12.694 0-14 7.29-14 20 0 12.712 1.306 20 14 20h80v40H60c-33.674-.276-60-26.01-60-60C0 25.735 25.775 0 60 0Z"/></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" className={styles.contactsBgs3} width="80" height="40"><g fill="#1F51A3" fillRule="evenodd"><path d="M0 10 9.896 0H4.418L0 5zM0 28 26.896 0h-5.478L0 22zM7 40 44.896 0h-5.478L1 40zM24 40 61.896 0h-5.478L18 40zM41 40 78.896 0h-5.478L35 40zM58 40l22-23v-6L52 40zM75 40l5-5v-6L69 40z"/></g></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" className={styles.contactsBgs4} width="140" height="120"><path fill="#F65F59" fillRule="evenodd" d="M60 0v40c-12.694 0-14 7.29-14 20 0 12.712 1.306 20 14 20h80v40H60c-33.674-.276-60-26.01-60-60C0 25.735 25.775 0 60 0Z"/></svg>
             </div>
         </section>
     )
