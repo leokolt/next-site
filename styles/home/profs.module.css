@@ -13,9 +13,9 @@
     }
   }
 
-.profsInner > * {
+/* .profsInner > * {
     flex: 0 0 100%;
-}
+} */
 
 .profsInner {
     display: flex;
@@ -31,11 +31,12 @@
     scroll-snap-type: x mandatory;
     scroll-padding-left: 15px;
     scroll-padding-right: 15px;
+    -webkit-overflow-scrolling: touch
 }
 
 .profsItem {
     scroll-snap-align: start;
-    max-width: 80%;
+    flex: 0 0 80%;
     margin: 0 15px;
     scroll-margin-right: 15px;
     scroll-margin-left: 15px;
@@ -83,7 +84,6 @@
     .profsInner > * {
         flex: 0 0 calc(50% - 15px);
         scroll-snap-align: unset;
-        max-width: 100%;
         margin: 0;
     }
 

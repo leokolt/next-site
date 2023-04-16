@@ -58,7 +58,7 @@ export default function Reviews () {
                     {items.map((n, i) => (
                         <div className={styles.reviewsItem} key={i} ref={carouselItemRef} data-index={`data-${i}`}>
 
-                            <p class={styles.reviewsItemContent}>{n.content}</p>
+                            <p className={styles.reviewsItemContent}>{n.content}</p>
                             <div className={styles.reviewsItemBottom}>
                                 <p className={styles.reviewsItemBottomName}>{n.name}</p>
                                 <p className={styles.reviewsItemBottomTitle}>{n.title}</p>
