@@ -40,7 +40,7 @@
     box-shadow: 5px 5px var(--color-text-primary);
     background-color: var(--color-bg-primary);
     padding: 10px;
-    font-size: var(--p);
+    font-size: var(--p3);
 }
 
 .featuredWorkItemInfo > span, .featuredWorkItemInfo > a {

@@ -12,6 +12,8 @@ export default function Reviews () {
         { title: 'АкадемПеревод5', name: 'Павел Багратионов', content: 'Я ищу заказы сам. Если вы пишите мне в мессенджеры или на почту, то отвечать вам буду я, а не кто-то другой. Цена за работу определяется ее сложностью и количеством времени, которое необходимо на нее потратить, без процентов и накруток со стороны "помощников"' },
     ];
 
+    const sectionTitleClasses = [styles.sectionTitle, "sectionTitle"].join(" ")
+    const reviewsBtnClasses = [styles.reviewsBtn, "mainBtn"].join(" ")
 
 
     const carouselRef = useRef(null)
@@ -43,21 +45,25 @@ export default function Reviews () {
     return (
         <section className={styles.reviews}>
             <div className="wrapperScroll">
-                <h2 className="sectionTitle">reviews</h2>
-
-                <div>
-                    <button onClick={scrollToLeft} className={`${currentIndex > 0 ? 'show' : ''}`}>&lt;</button>
-                    <button onClick={scrollToRight} className={`${currentIndex < 4 ? 'show' : ''}`}>&gt;</button>
+                <div className={styles.reviewsTop}>
+                    <h2 className={sectionTitleClasses}>Отзывы</h2>
+                    <div className={styles.reviewsBtns}>
+                        <button onClick={scrollToLeft} className={`${reviewsBtnClasses} ${currentIndex > 0 ? styles.reviewsBtnShow : ''}`}>&lt;</button>
+                        <button onClick={scrollToRight} className={`${reviewsBtnClasses} ${currentIndex < 4 ? styles.reviewsBtnShow : ''}`}>&gt;</button>
+                    </div>
                 </div>
-
 
                 <div className={styles.reviewsInner} ref={carouselRef}>
 
                     {items.map((n, i) => (
                         <div className={styles.reviewsItem} key={i} ref={carouselItemRef} data-index={`data-${i}`}>
-                            <h3>{n.title}</h3>
-                            <p>{n.content}</p>
-                            <p>{n.name}</p>
+
+                            <p class={styles.reviewsItemContent}>{n.content}</p>
+                            <div className={styles.reviewsItemBottom}>
+                                <p className={styles.reviewsItemBottomName}>{n.name}</p>
+                                <p className={styles.reviewsItemBottomTitle}>{n.title}</p>
+                            </div>
+
                         </div>
                     ))}
 

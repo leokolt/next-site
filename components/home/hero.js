@@ -23,6 +23,11 @@ const Hero = () => {
                                 alt="Picture of the author"
                                 width={350}
                                 height={350}
+                                priority
+                                style={{
+                                    width: '70%',
+                                    height: 'auto',
+                                }}
                             />
                         </div>
 
