@@ -15,6 +15,7 @@
     scroll-padding-left: 15px;
     scroll-padding-right: 15px;
     --webkit-overflow-scrolling: touch;
+    padding-right: 15px;
 }
 
 .reviewsInner::-webkit-scrollbar {
@@ -131,5 +132,9 @@
     .reviews .sectionTitle {
         margin: 0 0 50px;
         width: 50%;
+    }
+
+    .reviewsInner {
+        padding-right: 0;
     }
 }

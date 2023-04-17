@@ -17,6 +17,7 @@
 .heroInnerRight {
     text-align: center;
     animation: rotate 1s cubic-bezier(.5,2.5,.7,.7);
+    margin-top: 20px;
 }
 
 .heroInnerRight > img {
@@ -74,6 +75,10 @@
 
     .heroTitle {
         font-size: 60px;
+    }
+
+    .heroInnerRight {
+        margin-top: 0;
     }
 }
 
