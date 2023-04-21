@@ -3,8 +3,8 @@ import {getAllPosts, getAllPostsByTag} from "@/lib/getAllData";
 import Head from "next/head";
 import Article from "@/components/article";
 
-import { transliterate } from '@/lib/transletter';
-const _ = require("lodash")
+//import { transliterate } from '@/lib/transletter';
+//const _ = require("lodash")
 
 export async function getStaticPaths() {
     const posts = getAllPosts();
@@ -14,7 +14,7 @@ export async function getStaticPaths() {
         paths: [...tags].map((tag) => {
             return {
                 params: {
-                    tag:  _.kebabCase( transliterate( tag ) )
+                    tag
                 }
             }
         }),

@@ -1,6 +1,6 @@
 
 import Seo from "@/components/global/seo";
-import RecentPosts from "../components/recentPosts";
+import RecentPosts from "../components/home/posts";
 import FeaturedWork from "../components/home/featuredWork";
 import Search from '@/components/search';
 import Hero from '@/components/home/hero'
@@ -45,9 +45,6 @@ export default function Home({posts, work}) {
 			<Prices />
 			<Search />
 			<RecentPosts posts={posts} />
-
-
-
 		</>
 	)
 }

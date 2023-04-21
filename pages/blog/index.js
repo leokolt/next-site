@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react"
 import Seo from "@/components/global/seo";
 import Article from '@/components/article';
+import styles from "@/styles/home/posts.module.css"
 
 import generateRssFeed from "@/lib/generateRssFeed";
 import { getAllPosts } from '@/lib/getAllData';
@@ -53,21 +54,24 @@ export default function Blog({posts}) {
 	}, [list]) //eslint-disable-line
 
 	return (
-		<div>
-		<Seo
-			ogImageUrl={`http://localhost:3000/api/og?title=Блог&description=Немножко статей об IT и всём таком`}
-		/>
-		<h1>Blog</h1>
-			{
-				list.map((post) => (
-					<Article key={post.slug} className='border-b-2' post={post} />
-				))
-			}
-			{hasMore ? (
-				<div><button onClick={handleLoadMore}>Еще статьи</button></div>
-				) : (
-				<div><button disabled>Больше нет статей</button></div>
-			)}
+		<div className={styles.blog}>
+			<Seo
+				ogImageUrl={`http://localhost:3000/api/og?title=Блог&description=Немножко статей об IT и всём таком`}
+			/>
+			<div className="wrapper">
+				<h1 className="sectionTitle">Blog</h1>
+				<div className={styles.blogInner}></div>
+				{
+					list.map((post) => (
+						<Article key={post.slug} className='border-b-2' post={post} />
+					))
+				}
+				{hasMore ? (
+					<div><button className="mainBtn loadBtn" onClick={handleLoadMore}>Больше статей</button></div>
+					) : (
+					<div><button className="mainBtn loadBtn" disabled>Больше нет статей</button></div>
+				)}
+			</div>
 		</div>
 	);
 }

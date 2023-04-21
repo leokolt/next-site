@@ -4,7 +4,7 @@
         <title>Your Blog name</title>
         <link>http://localhost:3000</link>
         <description>Your Blog description</description>
-        <lastBuildDate>Mon, 10 Apr 2023 14:29:20 GMT</lastBuildDate>
+        <lastBuildDate>Fri, 21 Apr 2023 18:05:52 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>Feed for Node.js</generator>
         <image>

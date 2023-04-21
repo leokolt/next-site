@@ -45,7 +45,7 @@
 .tabContentItem {
     opacity: 0;
     transition: .25s;
-    transform: translateY(-100%);
+    transform: translateX(100%);
     position: absolute;
     top: 0;
 }
