@@ -9,6 +9,7 @@ import Contacts from "@/components/global/contacts";
 import Benefits from "@/components/home/benefits";
 import Reviews from "@/components/home/reviews";
 import Prices from "@/components/home/prices";
+import Qa from "@/components/home/qa";
 
 
 import {getAllPosts, getAllWork} from "@/lib/getAllData";
@@ -45,6 +46,8 @@ export default function Home({posts, work}) {
 			<Prices />
 			<Search />
 			<RecentPosts posts={posts} />
+			<Qa/>
+			<Contacts description="Если ты все еще ничего не понял, то напиши мне любым удобным способом и я помогу тебе, малыш" />
 		</>
 	)
 }

@@ -20,9 +20,10 @@ const ThemeToggle = () => {
         <button
         	className="mainBtn"
 			role="button"
+			aria-label="change theme"
 			onClick={() => (currentTheme === 'dark' ? setTheme('light') : setTheme('dark'))}
 			data-theme={`${theme}-theme`}
-		>
+        >
 			{currentTheme === 'dark' ? 'темно' : 'светло'}
 		</button>
 

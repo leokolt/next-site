@@ -18,6 +18,7 @@ const SlideScreen = () => {
                 onClick={() => {
                     setSlideScreenActive(!slideScreenActive)
                 }}
+                aria-label="menu"
             >
                 <span className={styles.burger}></span>
             </button>

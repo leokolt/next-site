@@ -4,14 +4,14 @@ import styles from "@/styles/home/posts.module.css"
 // import { transliterate } from '@/lib/transletter';
 // const _ = require("lodash")
 
-const getTagLink = (tag) => {
+// const getTagLink = (tag) => {
 
-    return (
-		<Link href={`/blog/tag/${tag}`} key={tag}>
-			{tag}
-		</Link>
-    );
-  };
+//     return (
+// 		<Link href={`/blog/tag/${tag}`} key={tag}>
+// 			{tag}
+// 		</Link>
+//     );
+//   };
 
 export default function Article({ post }) {
 	return (

@@ -17,7 +17,7 @@
 	--color-bg-primary: #f7f7f7;
 	--color-accent: #F65F59;
 	--color-accent-secondary: #1F51A3;
-
+	--color-bg-secondary: #dacaca;
 
 
 }
@@ -27,7 +27,7 @@
 		--color-text-primary: #f7f7f7;
 		--color-text-secondary: #ff6b00;
 		--color-bg-primary: #292929;
-		--color-bg-toggle: #a9a9a9;
+		--color-bg-secondary: #1c1818;
 	}
 }
 
@@ -106,6 +106,12 @@ button {
 /*основные стили*/
 .wrapper {
 	max-width: 1230px;
+	padding: 0 15px;
+	margin: 0 auto;
+}
+
+.wrapperRead {
+	max-width: 780px;
 	padding: 0 15px;
 	margin: 0 auto;
 }

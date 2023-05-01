@@ -59,7 +59,7 @@ export default function Blog({posts}) {
 				ogImageUrl={`http://localhost:3000/api/og?title=Блог&description=Немножко статей об IT и всём таком`}
 			/>
 			<div className="wrapper">
-				<h1 className="sectionTitle">Blog</h1>
+				<h1 className="sectionTitle">Блог</h1>
 				<div className={styles.blogInner}></div>
 				{
 					list.map((post) => (

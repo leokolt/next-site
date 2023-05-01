@@ -39,9 +39,9 @@ export default function Pagination ({part}) {
     return (
         <>
         {hasMore ? (
-            <div><button onClick={handleLoadMore}>Еще статьи</button></div>
+            <div><button onClick={handleLoadMore} aria-label="posts load">Еще статьи</button></div>
             ) : (
-            <div><button disabled>Больше нет статей</button></div>
+            <div><button disabled aria-label="no posts load">Больше нет статей</button></div>
         )}
         </>
     )
