@@ -9,6 +9,7 @@
     align-items: center;
     background-color: rgba(0, 0, 0, 0.75);
     z-index: 99;
+    backdrop-filter: blur(4px);
 }
 
 .popupInner {

@@ -1,26 +1,11 @@
+import Nav from '@/components/nav'
+
 export default function Footer() {
-    return (
-      <footer>
-        <nav>
-          <ul>
-            <li>
-              <a href='#'>
-                <svg></svg>
-              </a>
-            </li>
-            <li>
-              <a href='#'>
-                <svg></svg>
-              </a>
-            </li>
-            <li>
-              <a href='#'>
-                <svg></svg>
-              </a>
-            </li>
-          </ul>
-        </nav>
-        <p>&copy; 2022 Chris Bongers. All rights reserved.</p>
-      </footer>
-    );
-  }
+	return (
+		<footer>
+			<div className="wrapper">
+				<p style={{textAlign:"center", marginBottom: '15px'}}>&copy; {`${new Date().getFullYear() }`}. Сайт разработчика Колтан Леонида. Все права защищены</p>
+			</div>
+		</footer>
+	);
+}

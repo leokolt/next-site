@@ -9,6 +9,9 @@ import styles from "@/styles/home/posts.module.css"
 
 import Button from '@/components/button';
 
+const _ = require("lodash")
+import {translit} from "@/lib/utils"
+
 const components = {
 	Button
 }
@@ -16,12 +19,10 @@ const components = {
 const getTagLink = (tag) => {
 	return (
 		<Link href={`/blog/tag/${tag}`} key={tag}>
-			{tag}
+			{translit(tag)}
 		</Link>
 	);
 };
-
-
 
 export async function getStaticPaths() {
     const posts = getAllPosts();

@@ -51,22 +51,17 @@
     margin-bottom: 30px;
     display: flex;
     align-items: flex-end;
-    width: 65%;
+    width: 85%;
 }
 
 
 .qaLeftContent, .qaRightContent {
     border: 4px solid var(--color-text-primary);
-    /* box-shadow: 5px 5px var(--color-text-primary); */
     z-index: 1;
     background-color: var(--color-bg-primary);
     color: var(--color-text-primary);
     font-size: var(--p);
     padding: 10px 20px;
-    cursor: pointer;
-    position: relative;
-    transition: box-shadow .15s;
-
 }
 
 .qaLeftContent {
@@ -139,14 +134,20 @@
 }
 
 .qaImg {
-    width: 40px;
-    height: 40px;
+    width: 30px;
+    height: 30px;
     border-radius: 999px;
     object-fit: cover;
     background-color: #fff;
 }
 
-.qaUser {
-    width: 40px;
-    height: 40px;
+@media(min-width: 992px) {
+    .qaLeft, .qaRight  {
+        width: 65%;
+    }
+
+    .qaImg {
+        width: 40px;
+        height: 40px;
+    }
 }

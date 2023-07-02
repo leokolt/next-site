@@ -7,8 +7,8 @@
     box-shadow: 5px 5px var(--color-text-primary);
     margin-bottom: 20px;
     padding: 20px;
-    width: calc(50% - 20px);
-    display: inline-block;
+    width: 100%;
+    display: block;
 }
 
 .article:not(:nth-child(even)) {
@@ -73,5 +73,13 @@
 
 .blogPostTitle {
     font-size: var(--h1);
+
+}
+
+@media(min-width: 992px) {
+    .article {
+        width: calc(50% - 20px);
+        display: inline-block;
+    }
 
 }

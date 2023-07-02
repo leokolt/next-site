@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react"
-import Head from 'next/head'
+import Seo from "@/components/global/seo";
 import Work from "../components/work";
 import {getAllWork} from "@/lib/getAllData";
 import styles from "@/styles/home/featuredWork.module.css"
@@ -53,9 +53,11 @@ export default function WorkPage({work}) {
 
     return (
         <div>
-            <Head>
-
-            </Head>
+            <Seo
+                title="Все работы Колтан Леонида"
+                description="Здесь собраны некоторые из работ разработчика Колтан Леонида"
+				ogImageUrl={`http://localhost:3000/api/og?title=Все работы Колтан Леонида&description=Здесь собраны некоторые из работ разработчика Колтан Леонида`}
+            />
             <section className='px-6'>
                 <div className='wrapper'>
                     <h1 className='sectionTitle'>Проекты</h1>

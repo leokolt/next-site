@@ -2,7 +2,6 @@
 import Seo from "@/components/global/seo";
 import RecentPosts from "../components/home/posts";
 import FeaturedWork from "../components/home/featuredWork";
-import Search from '@/components/search';
 import Hero from '@/components/home/hero'
 import Profs from '@/components/home/profs';
 import Contacts from "@/components/global/contacts";
@@ -40,11 +39,10 @@ export default function Home({posts, work}) {
 			<Hero />
 			<Profs />
 			<FeaturedWork work={work} />
-			<Contacts description="Если тебя заинтересовали мои проекты, ты хочешь пострудничать или ебанутсу, используй мои контакты или форму для связи" />
+			<Contacts description="Если тебя заинтересовали мои проекты, ты хочешь пострудничать или ебанутсу, используй мои контакты или форму для связи" bgs="2"/>
 			<Benefits/>
 			<Reviews />
 			<Prices />
-			<Search />
 			<RecentPosts posts={posts} />
 			<Qa/>
 			<Contacts description="Если ты все еще ничего не понял, то напиши мне любым удобным способом и я помогу тебе, малыш" />

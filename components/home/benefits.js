@@ -27,14 +27,16 @@ export default function Benefits () {
                 <div className={styles.benefitsInner}>
                     <div className={styles.benefitsTab}>
                         <h2 className="sectionTitle" style={{width: '100%'}}>Почему именно я?</h2>
-                        {items.map((n, i) => (
-                            <h3
-                                className={`${tabItemClasses} ${i === active ? styles.tabItemActive : ''}`}
-                                onClick={openTab}
-                                data-index={i}
-                                key={i}
-                            >{n.title}</h3>
-                        ))}
+                        <div className={styles.benefitsItems}>
+                            {items.map((n, i) => (
+                                <h3
+                                    className={`${tabItemClasses} ${i === active ? styles.tabItemActive : ''}`}
+                                    onClick={openTab}
+                                    data-index={i}
+                                    key={i}
+                                >{n.title}</h3>
+                            ))}
+                        </div>
                     </div>
 
                     <div className={styles.benefitsTabContent}>

@@ -16,7 +16,7 @@ const Nav = ({ slideScreenActive, setSlideScreenActive }) => {
             <ul className={styles.headerMenu}>
                 {routes.map((route, i) => {
                     return (
-                        <li key={route} className={`${router.pathname === `/${route.toLowerCase()}` && 'text-red-400'}`}>
+                        <li key={route} className={`${router.pathname === `/${route.toLowerCase()}`}`}>
                             <Link href={`/${route.toLowerCase()}`} onClick={() => {setSlideScreenActive(!slideScreenActive) }}>{routesRu[i]}</Link>
                         </li>
                     )
