@@ -38,9 +38,9 @@ export default function Qa () {
         <section className={styles.qa}>
             <div className="wrapper">
                 <h2 className="sectionTitle">Вопросы и ответы</h2>
-                <div className={`${styles.qaInner} ${changeClass()}`}>
+                <div className={`${styles.qaInner}`}>
                     {items.map((item, i) => (
-                        <div className={styles.qaItem} key={item.question}>
+                        <div className={`${styles.qaItem} ${changeClass()}`} key={item.question}>
                             <div className={styles.qaLeft}>
                                 <Image
                                     src="/images/qa/user.svg"

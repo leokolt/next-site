@@ -10,7 +10,7 @@ export default function FeaturedWork({work}) {
                 <div className={styles.featuredWorkInner}>
                     {work.map((workItem) => (
                         <Work key={workItem.title} item={workItem} />
-                    ))}
+                    )).slice(0,6)}
                 </div>
                 <Link href='/work' className='loadBtn mainBtn'>Смотреть все работы</Link>
             </div>

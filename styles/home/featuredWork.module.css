@@ -18,12 +18,21 @@
     position: relative;
 }
 
+.featuredWorkItem:hover img.scrollImage {
+    transform: translateY(calc(-100% + 350px));
+    transition: 12s ease-out;
+}
+
 .featuredWorkItemImg {
     border-bottom: 4px solid var(--color-text-primary);
+    max-height: 350px;
+    overflow: hidden;
 }
 
 .featuredWorkItemImg > * {
     margin-bottom: -10px;
+    transform: translateY(0);
+    transition: 5s ease-out;
 }
 
 .featuredWorkItemInfo {

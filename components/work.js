@@ -2,6 +2,7 @@ import Image from "next/image"
 import styles from "@/styles/home/featuredWork.module.css"
 
 export default function Work({item}) {
+
     return (
         <article className={styles.featuredWorkItem}>
             <div className={styles.featuredWorkItemImg}>
@@ -14,6 +15,7 @@ export default function Work({item}) {
                         width: '100%',
                         height: 'auto',
                     }}
+                    className={`${item.scroll === true ? styles.scrollImage : ''}`}
                 />
             </div>
             <div className={styles.featuredWorkItemContent}>

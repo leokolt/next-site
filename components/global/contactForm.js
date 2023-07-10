@@ -12,7 +12,7 @@ export default function ContactForm() {
     return (
         <form className={styles.mainForm} onSubmit={handleSubmit}>
             <div className={styles.mainFormRow}>
-                <input id="who" type="text" name="Кто ты?" placeholder="Вашу имя"/>
+                <input id="who" type="text" name="Кто ты?" placeholder="Ваше имя"/>
                 <ValidationError prefix="Who" field="who" errors={state.errors} />
                 <input id="email" type="email" name="Email" placeholder="Ваш Email"/>
                 <ValidationError prefix="Email" field="email" errors={state.errors} />

@@ -4,7 +4,7 @@
     padding: 50px 0;
 }
 
-.nthClass0 > *:nth-child(n + 2) {
+/* .nthClass0 > *:nth-child(n + 2) {
     display: none;
 }
 
@@ -29,6 +29,34 @@
 }
 
 .nthClass6 > *:nth-child(n + 8) {
+    display: none;
+} */
+
+.nthClass0:nth-child(n + 2) {
+    display: none;
+}
+
+.nthClass1:nth-child(n + 3) {
+    display: none;
+}
+
+.nthClass2:nth-child(n + 4) {
+    display: none;
+}
+
+.nthClass3:nth-child(n + 5) {
+    display: none;
+}
+
+.nthClass4:nth-child(n + 6) {
+    display: none;
+}
+
+.nthClass5:nth-child(n + 7) {
+    display: none;
+}
+
+.nthClass6:nth-child(n + 8) {
     display: none;
 }
 

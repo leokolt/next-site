@@ -4,6 +4,8 @@ import Work from "../components/work";
 import {getAllWork} from "@/lib/getAllData";
 import styles from "@/styles/home/featuredWork.module.css"
 
+import FilterWork from "@/components/filter-work";
+
 export async function getStaticProps() {
     const work = getAllWork();
 
@@ -15,41 +17,46 @@ export async function getStaticProps() {
 }
 
 export default function WorkPage({work}) {
-    const numberPosts = 3
 
-	// State for the list
-	const [list, setList] = useState([...work.slice(0, numberPosts)])
+     const [selectedCat, setSelectedCat] = useState("");
 
-	// State to trigger oad more
-	const [loadMore, setLoadMore] = useState(false)
+    // const numberPosts = 3
 
-	// State of whether there is more to load
-	const [hasMore, setHasMore] = useState(work.length > numberPosts)
+	// // State for the list
+	// const [list, setList] = useState([...work.slice(0, numberPosts)])
 
-	// Load more button click
-	const handleLoadMore = () => {
-		setLoadMore(true)
-	}
+	// // State to trigger oad more
+	// const [loadMore, setLoadMore] = useState(false)
 
-	// Handle loading more articles
-	useEffect(() => {
-		if (loadMore && hasMore) {
-		const currentLength = list.length
-		const isMore = currentLength < work.length
-		const nextResults = isMore
-			? work.slice(currentLength, currentLength + numberPosts)
-			: []
-		setList([...list, ...nextResults])
-		setLoadMore(false)
-		}
-	}, [loadMore, hasMore]) //eslint-disable-line
+	// // State of whether there is more to load
+	// const [hasMore, setHasMore] = useState(work.length > numberPosts)
 
-	//Check if there is more
-	useEffect(() => {
-		const isMore = list.length < work.length
-		setHasMore(isMore)
-	}, [list]) //eslint-disable-line
+	// // Load more button click
+	// const handleLoadMore = () => {
+	// 	setLoadMore(true)
+	// }
 
+	// // Handle loading more articles
+	// useEffect(() => {
+	// 	if (loadMore && hasMore) {
+	// 	const currentLength = list.length
+	// 	const isMore = currentLength < work.length
+	// 	const nextResults = isMore
+	// 		? work.slice(currentLength, currentLength + numberPosts)
+	// 		: []
+	// 	setList([...list, ...nextResults])
+	// 	setLoadMore(false)
+	// 	}
+	// }, [loadMore, hasMore]) //eslint-disable-line
+
+	// //Check if there is more
+	// useEffect(() => {
+	// 	const isMore = list.length < work.length
+	// 	setHasMore(isMore)
+	// }, [list]) //eslint-disable-line
+
+    const filteredCat = selectedCat ? work.filter((listItem) => listItem.category.includes(selectedCat))
+    : work;
 
     return (
         <div>
@@ -61,16 +68,20 @@ export default function WorkPage({work}) {
             <section className='px-6'>
                 <div className='wrapper'>
                     <h1 className='sectionTitle'>Проекты</h1>
+                    <FilterWork
+                        selectedCat={selectedCat}
+                        onSelect={setSelectedCat}
+                    />
                     <div className={styles.featuredWorkInner}>
-                        {list.map((workItem) => (
+                        {filteredCat.map((workItem) => (
                             <Work key={workItem.title} item={workItem} />
                         ))}
                     </div>
-                    {hasMore ? (
+                    {/* {hasMore ? (
                         <div><button className="mainBtn loadBtn" onClick={handleLoadMore}>Больше работ</button></div>
                         ) : (
                         <div><button className="mainBtn loadBtn" disabled>Больше нет работ</button></div>
-                    )}
+                    )} */}
                 </div>
             </section>
         </div>
