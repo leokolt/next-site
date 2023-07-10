@@ -18,7 +18,8 @@ export async function getStaticProps() {
 
 export default function WorkPage({work}) {
 
-     const [selectedCat, setSelectedCat] = useState("");
+     const [selectedCat, setSelectedCat] = useState('')
+     const [selectedYear, setSelectedYear] = useState('')
 
     // const numberPosts = 3
 
@@ -55,8 +56,15 @@ export default function WorkPage({work}) {
 	// 	setHasMore(isMore)
 	// }, [list]) //eslint-disable-line
 
-    const filteredCat = selectedCat ? work.filter((listItem) => listItem.category.includes(selectedCat))
-    : work;
+    // const filteredCat = selectedCat ? work.filter((listItem) => listItem.category.includes(selectedCat))
+    // : work;
+
+
+    const filteredWork = work.filter(w => {
+        const catFilter = selectedCat ? w.category === selectedCat : work; // true if no category selected
+        const yearFilter = selectedYear ? w.year === selectedYear : work; // true if no year selected
+        return catFilter && yearFilter;
+    })
 
     return (
         <div>
@@ -70,12 +78,18 @@ export default function WorkPage({work}) {
                     <h1 className='sectionTitle'>Проекты</h1>
                     <FilterWork
                         selectedCat={selectedCat}
-                        onSelect={setSelectedCat}
+                        onSelectCat={setSelectedCat}
+                        selectedYear={selectedYear}
+                        onSelectYear={setSelectedYear}
                     />
-                    <div className={styles.featuredWorkInner}>
-                        {filteredCat.map((workItem) => (
-                            <Work key={workItem.title} item={workItem} />
-                        ))}
+                    <div className={filteredWork.length == 0 ? styles.featuredWorkInnerNotContent : styles.featuredWorkInner}>
+                        {
+                            filteredWork.length == 0 ?
+                                <h4>Не найдено работ. Попробуйте перефильтровать :-) </h4> :
+                                filteredWork.map((workItem) => (
+                                    <Work key={workItem.title} item={workItem} />
+                                ))
+                        }
                     </div>
                     {/* {hasMore ? (
                         <div><button className="mainBtn loadBtn" onClick={handleLoadMore}>Больше работ</button></div>
