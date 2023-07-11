@@ -22,7 +22,7 @@ export default function Article({ post }) {
 				</h3>
 			</Link>
 			<p className={styles.articleDesc}>{post.description}</p>
-			<span className={styles.articleDate}>
+			<span className={styles.blogPostHeaderDate}>
 				<Date dateString={post.date} />
 				{/* {post.tags.map(tag => getTagLink(tag)).reduce((prev, curr) => [prev, ', ', curr])} */}
 			</span>

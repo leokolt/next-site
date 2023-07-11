@@ -5,65 +5,109 @@
 
 .heroInner {
     display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    align-items: center;
+    align-items: flex-end;
 }
 
-.heroInner > * {
+/* .heroInner > * {
     flex: 1;
-}
+} */
 
 .heroInnerRight {
-    text-align: center;
-    animation: rotate 1s cubic-bezier(.5,2.5,.7,.7);
-    margin-top: 20px;
+    flex: none;
+    position: relative;
+    display: none;
 }
 
-.heroInnerRight > img {
-    width: 70%;
+.heroRightBoxSvg {
+    z-index: -1;
+    fill: var(--color-text-primary);
+    font-family: monospace;
+    width: 220px;
+    height: 220px;
+    position: absolute;
+    left: -35px;
+    top: -25px;
+    animation: 100s linear 0s normal none infinite running rotateSvg;
+    transform-origin: center center;
 }
 
-@keyframes rotate {
+.heroImage {
+    /* animation: 50s linear 0s normal none infinite running rotateImage; */
+    transform-origin: center center;
+    width: 100px;
+    height: 100px;
+}
+
+@keyframes rotateImage {
     0% {
-        transform:rotate(0deg);
+        transform: rotate(0deg);
     }
-    50% {
-        transform:rotate(-180deg);
-    }
+
     100% {
-        transform:rotate(-360deg);
+        transform: rotate(-360deg);
     }
+}
+
+@keyframes rotateSvg {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+
+
+.fadeWord {
+    font-weight: 700;
 }
 
 .heroTitle {
     font-size: var(--h1);
+    font-weight: 700;
 }
 
 .techsScroll {
     padding: 24px 0;
     overflow: hidden;
+    display: flex;
 }
 
 .techsScrollText {
     line-height: 1.3;
     /* color: #f7f7f7; */
     white-space: nowrap;
-    animation: scrollLine 15s infinite linear;
+    animation: scrollLine 20s infinite linear;
+    animation-delay: -20s;
     font-size: var(--h2);
-    display: inline-block;
 }
 
-.techsScrollText:after {
-    content: '* HTML * JS * Jquery * CSS * WordPress * Tilda * SCSS * ReactJS * Gatsby * NextJS * php';
+.techsScrollText2 {
+    /* content: '* HTML * JS * Jquery * CSS * WordPress * Tilda * SCSS * ReactJS * Gatsby * NextJS * php'; */
+    animation: scrollLine2 20s infinite linear;
+    animation-delay: -10s;
+    white-space: nowrap;
+    font-size: var(--h2);
+    line-height: 1.3;
 }
 
 @keyframes scrollLine {
     0% {
-        transform: translate3d(0, 0, 0);
+        transform: translateX(100%);
     }
     100% {
-        transform: translate3d(-50%, 0, 0);
+        transform: translateX(-100%);
+    }
+}
+
+@keyframes scrollLine2 {
+    0% {
+        transform: translateX(0%);
+    }
+    100% {
+        transform: translateX(-200%);
     }
 }
 
@@ -74,11 +118,16 @@
     }
 
     .heroTitle {
-        font-size: 60px;
+        font-size: 90px;
+        font-weight: 700;
     }
 
     .heroInnerRight {
         margin-top: 0;
+    }
+
+    .heroInnerRight {
+        display: block;
     }
 }
 

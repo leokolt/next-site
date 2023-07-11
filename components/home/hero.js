@@ -1,7 +1,8 @@
 //import Link from "next/link";
-import Image from "next/image"
+//import Image from "next/image"
 import styles from "@/styles/home/hero.module.css"
-
+import { AnimatedText } from "../extra/heroTextChanger"
+import HeroStamp from "../extra/heroStamp"
 
 const Hero = () => {
 
@@ -14,22 +15,16 @@ const Hero = () => {
                     <div className={styles.heroInner}>
                         <div className="heroInnerLeft">
                             <h1 className={styles.heroTitle}>
-                                Привет! Меня зовут Леонид, и я - разработчик!
+                                Привет! Меня зовут Леонид, и я - <br></br> <AnimatedText />
                             </h1>
                         </div>
                         <div className={styles.heroInnerRight}>
-                            <Image
-                                src="/images/home/morda.svg"
-                                alt="Picture of the author"
-                                width={350}
-                                height={350}
-                                priority
-                                style={{
-                                    width: '70%',
-                                    height: 'auto',
-                                }}
-                            />
+                            <div className="heroRightBox">
+                                <HeroStamp />
+                            </div>
+
                         </div>
+
 
                     </div>
 
@@ -38,6 +33,9 @@ const Hero = () => {
             </section>
             <section className={styles.techsScroll}>
                 <div className={styles.techsScrollText}>
+                    * HTML * JS * Jquery * CSS * WordPress * Tilda * SCSS * ReactJS * Gatsby * NextJS * php&nbsp;
+                </div>
+                <div className={styles.techsScrollText2}>
                     * HTML * JS * Jquery * CSS * WordPress * Tilda * SCSS * ReactJS * Gatsby * NextJS * php&nbsp;
                 </div>
             </section>

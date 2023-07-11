@@ -36,7 +36,7 @@ const fontText = localFont({
   const fontHead = localFont({
 	src: [
 		{
-			path: '../public/fonts/PPNeueMachina-PlainRegular.woff2',
+			path: '../public/fonts/FixelDisplay-Regular.woff2',
 			weight: '400',
 		  },
 	]

@@ -118,6 +118,10 @@ button {
 	margin: 0 auto;
 }
 
+.wrapperRead > * + * {
+	margin-top: 20px;
+}
+
 .wrapperScroll {
 	max-width: 1230px;
 	margin: 0 auto;

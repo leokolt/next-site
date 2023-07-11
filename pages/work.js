@@ -4,7 +4,7 @@ import Work from "../components/work";
 import {getAllWork} from "@/lib/getAllData";
 import styles from "@/styles/home/featuredWork.module.css"
 
-import FilterWork from "@/components/filter-work";
+import FilterWork from "@/components/workFilter";
 
 export async function getStaticProps() {
     const work = getAllWork();

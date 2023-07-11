@@ -6,6 +6,7 @@ import { MDXRemote } from 'next-mdx-remote';
 import Link from 'next/link'
 import Date from '@/lib/date';
 import styles from "@/styles/home/posts.module.css"
+import PostFooter from "@/components/extra/postFooter";
 
 import Button from '@/components/button';
 
@@ -16,9 +17,11 @@ const components = {
 	Button
 }
 
+const blogPostHeaderTopTagClasses = [styles.blogPostHeaderTopTag, "mainBtn"].join(" ")
+
 const getTagLink = (tag) => {
 	return (
-		<Link href={`/blog/tag/${tag}`} key={tag}>
+		<Link className={blogPostHeaderTopTagClasses} href={`/blog/tag/${tag}`} key={tag}>
 			{translit(tag)}
 		</Link>
 	);
@@ -68,17 +71,22 @@ export async function getStaticPaths() {
 
 			<article className={styles.blogPost}>
 				<div className="wrapper">
-					<div className='prose mx-auto'>
+					<div className='prose'>
 						<header className={styles.blogPostHeader}>
+							<div className={styles.blogPostHeaderTop}>
+								{frontmatter.tags.map(tag => getTagLink(tag)).reduce((prev, curr) => [prev, '', curr])}
+							</div>
 							<h1 className={styles.blogPostTitle}>{frontmatter.title}</h1>
-							<p className={styles.articleDesc}>{frontmatter.description}</p>
-							<span className=''>
+							<p className={styles.postDesc}>{frontmatter.description}</p>
+							<span className={styles.blogPostHeaderDate}>
 								<Date dateString={frontmatter.date} />
-								{frontmatter.tags.map(tag => getTagLink(tag)).reduce((prev, curr) => [prev, ', ', curr])}
 							</span>
 						</header>
 						<div className="wrapperRead">
 							<MDXRemote {...content}  components = {components} />
+							<PostFooter
+								title={frontmatter.title}
+							/>
 						</div>
 					</div>
 				</div>
