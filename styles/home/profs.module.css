@@ -47,9 +47,8 @@
 }
 
 .profsSymbol {
-    font-size: var(--h1);
     text-align: center;
-    margin-bottom: 50px;
+    padding: 0 65px;
 }
 
 .profsItemTitle {

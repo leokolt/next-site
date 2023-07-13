@@ -31,25 +31,8 @@ const fontText = localFont({
 
 	],
 	variable: '--onest-font'
-  });
+});
 
-  const fontHead = localFont({
-	src: [
-		{
-			path: '../public/fonts/FixelDisplay-Regular.woff2',
-			weight: '400',
-		  },
-	]
-})
-
-const fontAnother = localFont({
-	src: [
-		{
-			path: '../public/fonts/PPNeueMachina-PlainLight.woff2',
-			weight: '300',
-		  }
-	]
-})
 
 export default function App({ Component, pageProps }) {
 
@@ -60,9 +43,6 @@ export default function App({ Component, pageProps }) {
 					html * {
 						font-family: ${fontText.style.fontFamily};
 					}
-					h1, h2, h3, h4, h5, h6 {
-						/* font-family: ${fontHead.style.fontFamily};
-					} */
 				`}</style>
 				<Component {...pageProps} />
 			</Layout>

@@ -1,12 +1,24 @@
+import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import ThemeToggle from "@/components/themeSwitcher";
-import SlideScreen from "@/components//slideScreen";
+import SlideScreen from "@/components/global/slideScreen";
 import styles from "@/styles/header.module.css"
 
 export default function Header() {
 
-
     const headerInnerClasses = [styles.headerInner, "wrapper"].join(" ")
+
+    const [showSlideScreen, setShowSlideScreen] = useState(false);
+
+    const handleClick = () => {
+        setShowSlideScreen(!showSlideScreen);
+    };
+
+    const menuBtnClasses = [showSlideScreen ? `${styles.menuBtnActive} ${styles.menuBtn}` : `${styles.menuBtn}`, "mainBtn"].join(" ")
+
+    useEffect(() => {
+        document.body.className = showSlideScreen ? "isSlideActive" : "";
+    });
 
     return (
         <header className={styles.header}>
@@ -17,9 +29,16 @@ export default function Header() {
 
                 <div className={styles.headerActions}>
                     <ThemeToggle/>
-                    <SlideScreen />
+                    <button className={menuBtnClasses} onClick={handleClick}>
+                        <div className={styles.burger}></div>
+                    </button>
                 </div>
             </div>
+            {showSlideScreen &&
+                <SlideScreen
+                    onClose={() => setShowSlideScreen(false)}
+                    showSlideScreen={showSlideScreen}
+                />}
         </header>
     )
 }

@@ -7,7 +7,7 @@ const HeroStamp = () => {
 
         <div className="heroRightBox">
             <Image
-                src="/images/home/golova.png"
+                src="/images/hero/golova.png"
                 alt="Picture of the author"
                 width={100}
                 height={100}

@@ -15,17 +15,17 @@ import {getAllPosts, getAllWork} from "@/lib/getAllData";
 
 export async function getStaticProps() {
 	const posts = getAllPosts();
-	const work = getAllWork();
+	const works = getAllWork();
 
 	return {
 		props: {
 			posts,
-			work,
+			works,
 		},
 	};
 }
 
-export default function Home({posts, work}) {
+export default function Home({posts, works}) {
 
 
 	return (
@@ -38,7 +38,7 @@ export default function Home({posts, work}) {
             />
 			<Hero />
 			<Profs />
-			<FeaturedWork work={work} />
+			<FeaturedWork work={works} />
 			<Contacts description="Если тебя заинтересовали мои проекты, ты хочешь пострудничать или ебанутсу, используй мои контакты или форму для связи" bgs="2"/>
 			<Benefits/>
 			<Reviews />

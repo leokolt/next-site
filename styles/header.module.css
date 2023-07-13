@@ -3,6 +3,12 @@
 
 }
 
+.headerFixed {
+    position: fixed;
+    width: 100%;
+    top: 0;
+}
+
 .headerInner {
     display: flex;
     justify-content: space-between;
@@ -27,6 +33,63 @@
     display: flex;
     gap: 20px;
     flex-direction: column;
+}
+
+.menuBtn {
+    z-index: 99;
+    position: relative;
+}
+
+.menuBtn.menuBtnActive {
+    position: relative;
+}
+
+.burger {
+    width: 26px;
+    height: 5px;
+    display: block;
+    background: var(--color-text-primary);
+    transition: .2s;
+    opacity: 1;
+    position: relative;
+}
+
+.burger:before {
+    content: '';
+    width: 26px;
+    height: 5px;
+    display: block;
+    background: var(--color-text-primary);
+    position: absolute;
+    top: -8px;
+    left: 0;
+    transition: .2s;
+}
+
+.burger:after {
+    content: '';
+    width: 26px;
+    height: 5px;
+    display: block;
+    background: var(--color-text-primary);
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    transition: .2s;
+}
+
+.menuBtn.menuBtnActive .burger {
+    background: unset;
+}
+
+.menuBtn.menuBtnActive .burger:before {
+    transform: rotateZ(45deg);
+    top: 0;
+}
+
+.menuBtn.menuBtnActive .burger:after {
+    transform: rotateZ(-45deg);
+    bottom: 0;
 }
 
 @supports (-webkit-touch-callout: none) and (not (translate: none)) {

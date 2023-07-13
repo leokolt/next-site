@@ -6,7 +6,7 @@ import { MDXRemote } from 'next-mdx-remote';
 import Link from 'next/link'
 import Date from '@/lib/date';
 import styles from "@/styles/home/posts.module.css"
-import PostFooter from "@/components/extra/postFooter";
+import PostFooter from "@/components/extra/postFooter"
 
 import Button from '@/components/button';
 
@@ -27,8 +27,10 @@ const getTagLink = (tag) => {
 	);
 };
 
+const posts = getAllPosts();
+
 export async function getStaticPaths() {
-    const posts = getAllPosts();
+
     return {
 		paths: posts.map((post) => {
 			return {
@@ -41,20 +43,28 @@ export async function getStaticPaths() {
 	};
 }
 
+
   export async function getStaticProps({ params: { slug } }) {
     const post =  getPostBySlug(slug);
 	const mdxSource = await serialize(post.content);
+
+    const postIndex = posts.findIndex((post) => post.slug === slug)
+    const prev = posts[postIndex + 1] || null
+    const next = posts[postIndex - 1] || null
+
     return {
       props: {
 		post,
 		frontmatter: post.data,
-		content: mdxSource
+		content: mdxSource,
+		prev,
+		next
 	  }
     };
   }
 
 
-  export default function PostPage({ frontmatter, content }) {
+  export default function PostPage({ frontmatter, content, prev, next }) {
 
 	const url = typeof window !== 'undefined' ? window.location.href : '';
 
@@ -87,6 +97,34 @@ export async function getStaticPaths() {
 							<PostFooter
 								title={frontmatter.title}
 							/>
+							<div>
+
+								{(next || prev) && (
+									<div>
+									{prev && (
+										<div>
+										<h2>
+											Previous Article
+										</h2>
+										<div>
+											<Link href={`/blog/${prev.slug}`}>{prev.title}</Link>
+										</div>
+										</div>
+									)}
+									{next && (
+										<div>
+										<h2>
+											Next Article
+										</h2>
+										<div>
+											<Link href={`/blog/${next.slug}`}>{next.title}</Link>
+										</div>
+										</div>
+									)}
+									</div>
+								)}
+	  						</div>
+
 						</div>
 					</div>
 				</div>
