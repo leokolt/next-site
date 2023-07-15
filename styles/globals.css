@@ -77,13 +77,24 @@ body {
 body {
   color: var(--color-text-primary);
   background: var(--color-bg-primary);
-  font-size: 20px;
+  font-size: var(--p);
   line-height: 1.6;
+      /* transition: 0.25s;
+    opacity: 1;
+    animation: slideUp 1s cubic-bezier(0.075, 0.82, 0.165, 1) forwards;
+    transform: translate3d(0, 4vh, 0); */
 }
 
-/* main {
-    overflow-x: hidden;
-} */
+@keyframes slideUp {
+	0% {
+	  transform: translate3d(0, 4vh, 0);
+	  opacity: 0;
+	}
+	100% {
+	  transform: translate3d(0, 0, 0);
+	  opacity: 1;
+	}
+}
 
 h1, h2, h3, h4, h5, h6 {
 	font-weight: normal;
@@ -120,6 +131,10 @@ button {
 
 .wrapperRead > * + * {
 	margin-top: 20px;
+}
+
+.wrapperRead h2, .wrapperRead h3, .wrapperRead h4 {
+	font-weight: 700;
 }
 
 .wrapperScroll {
@@ -251,6 +266,311 @@ body.isSlideActive {
 			background-size: 20px 20px;
 			background-position: center center;
 }
+
+/*theme codehighlight*/
+
+code[class*="language-"],
+pre[class*="language-"] {
+	text-align: left;
+	white-space: pre;
+	word-spacing: normal;
+	word-break: normal;
+	word-wrap: normal;
+	color: #eee;
+	background: #2f2f2f;
+	font-family: Roboto Mono, monospace;
+	font-size: 1em;
+	line-height: 1.5em;
+
+	-moz-tab-size: 4;
+	-o-tab-size: 4;
+	tab-size: 4;
+
+	-webkit-hyphens: none;
+	-moz-hyphens: none;
+	-ms-hyphens: none;
+	hyphens: none;
+}
+
+code[class*="language-"]::-moz-selection,
+pre[class*="language-"]::-moz-selection,
+code[class*="language-"] ::-moz-selection,
+pre[class*="language-"] ::-moz-selection {
+	background: #363636;
+}
+
+code[class*="language-"]::selection,
+pre[class*="language-"]::selection,
+code[class*="language-"] ::selection,
+pre[class*="language-"] ::selection {
+	background: #363636;
+}
+
+:not(pre) > code[class*="language-"] {
+	white-space: normal;
+	border-radius: 0.2em;
+	padding: 0.1em;
+}
+
+pre[class*="language-"] {
+	overflow: auto;
+	position: relative;
+	margin: 0.5em 0;
+	padding: 1.25em 1em;
+}
+
+.language-css > code,
+.language-sass > code,
+.language-scss > code {
+	color: #fd9170;
+}
+
+[class*="language-"] .namespace {
+	opacity: 0.7;
+}
+
+.token.atrule {
+	color: #c792ea;
+}
+
+.token.attr-name {
+	color: #ffcb6b;
+}
+
+.token.attr-value {
+	color: #a5e844;
+}
+
+.token.attribute {
+	color: #a5e844;
+}
+
+.token.boolean {
+	color: #c792ea;
+}
+
+.token.builtin {
+	color: #ffcb6b;
+}
+
+.token.cdata {
+	color: #80cbc4;
+}
+
+.token.char {
+	color: #80cbc4;
+}
+
+.token.class {
+	color: #ffcb6b;
+}
+
+.token.class-name {
+	color: #f2ff00;
+}
+
+.token.comment {
+	color: #616161;
+}
+
+.token.constant {
+	color: #c792ea;
+}
+
+.token.deleted {
+	color: #ff6666;
+}
+
+.token.doctype {
+	color: #616161;
+}
+
+.token.entity {
+	color: #ff6666;
+}
+
+.token.function {
+	color: #c792ea;
+}
+
+.token.hexcode {
+	color: #f2ff00;
+}
+
+.token.id {
+	color: #c792ea;
+	font-weight: bold;
+}
+
+.token.important {
+	color: #c792ea;
+	font-weight: bold;
+}
+
+.token.inserted {
+	color: #80cbc4;
+}
+
+.token.keyword {
+	color: #c792ea;
+}
+
+.token.number {
+	color: #fd9170;
+}
+
+.token.operator {
+	color: #89ddff;
+}
+
+.token.prolog {
+	color: #616161;
+}
+
+.token.property {
+	color: #80cbc4;
+}
+
+.token.pseudo-class {
+	color: #a5e844;
+}
+
+.token.pseudo-element {
+	color: #a5e844;
+}
+
+.token.punctuation {
+	color: #89ddff;
+}
+
+.token.regex {
+	color: #f2ff00;
+}
+
+.token.selector {
+	color: #ff6666;
+}
+
+.token.string {
+	color: #a5e844;
+}
+
+.token.symbol {
+	color: #c792ea;
+}
+
+.token.tag {
+	color: #ff6666;
+}
+
+.token.unit {
+	color: #fd9170;
+}
+
+.token.url {
+	color: #ff6666;
+}
+
+.token.variable {
+	color: #ff6666;
+}
+
+ /*my code*/
+
+ .code-line {
+    display: block;
+    padding-left: 16px;
+    padding-right: 16px;
+    margin-left: -20px;
+    margin-right: -20px;
+    border-left: 4px solid transparent;
+    font-size: 0.9rem;
+}
+
+.code-line span {
+	font-family: "Fira Code", Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+}
+
+.highlight-line {
+    background: #4646467d;
+    border-left-color: yellow;
+}
+
+.line-number:before {
+    display: inline-block;
+    width: 1rem;
+    text-align: right;
+    margin-right: 16px;
+    margin-left: -8px;
+    color: #71717a;
+    content: attr(line);
+	font-family: "Fira Code", Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+}
+
+code.code-highlight {
+    display: block;
+    width: calc(100% - 2px);
+}
+
+.code-line.inserted {
+    background-color: #064e3b;
+}
+
+.code-line.deleted {
+    background-color: #7f1d1d;
+}
+
+ .rehype-code-title {
+    background: #2F2F2F;
+    color: #89ddff;
+    font-family: "Fira Code", Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+    direction: ltr;
+    text-align: left;
+    white-space: pre;
+    word-spacing: normal;
+    word-break: normal;
+    line-height: 1.5;
+    -moz-tab-size: 4;
+    tab-size: 4;
+    -webkit-hyphens: none;
+    hyphens: none;
+    padding: 5px 1em;
+    margin-bottom: -10px;
+    border-bottom: 1px solid #89ddff;
+	font-size: 0.9rem;
+    width: fit-content;
+}
+
+.animate-slideUpEnter {
+	animation: slideUpEnter .3s ease-in-out
+}
+
+@keyframes slideUpEnter {
+	0% {
+		opacity: 0;
+		transform: translateY(20px);
+	}
+	100% {
+		opacity: 1;
+		transform: translateY(0px)
+	}
+}
+
+.animate-slideUpLeave {
+	animation: slideUpLeave .3s ease-in-out
+}
+
+@keyframes slideUpLeave {
+	0% {
+		opacity: 1;
+		transform: translateY(0);
+	}
+	100% {
+		opacity: 0;
+		transform: translateY(20px)
+	}
+}
+
 
 @media(min-width: 768px) {
 	.loadBtn {

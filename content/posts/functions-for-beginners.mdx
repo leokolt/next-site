@@ -17,14 +17,27 @@ tags: ['functions', 'javascript', 'sluchai-na-rabote', 'Yola', 'джавик', '
 ### This is a Markdown sub-heading
 We just used a `###` subheading in our blog post.
 
+![Alt Text](/images/posts/home-1.jpeg)
 
+<ImageMdx src="/images/posts/home-1.jpeg" />
 
+```diff:src/components/ArticleLayout.js
+  // this is a code block
+  const doSomething = () => {
+    return console.log('hey')
++ добавлено
+- удалено
+  }
 ```
+
+```js:src/components/ArticleLayout.js {1, 3-4} showLineNumbers
   // this is a code block
   const doSomething = () => {
     return console.log('hey')
   }
 ```
+
+
 
 {<Button text={"Click me"}/>}
 

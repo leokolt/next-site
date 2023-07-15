@@ -2,19 +2,23 @@ import { getAllPosts, getPostBySlug } from "@/lib/getAllData";
 import Seo from "@/components/global/seo";
 import { serialize } from 'next-mdx-remote/serialize';
 import { MDXRemote } from 'next-mdx-remote';
+import rehypePrism from 'rehype-prism-plus'
+import rehypeCodeTitles from 'rehype-code-titles'
 
 import Link from 'next/link'
 import Date from '@/lib/date';
 import styles from "@/styles/home/posts.module.css"
 import PostFooter from "@/components/extra/postFooter"
 
-import Button from '@/components/button';
+import Button from '@/components/mdx/button'
+import ImageMdx from "@/components/mdx/image"
 
 const _ = require("lodash")
 import {translit} from "@/lib/utils"
 
 const components = {
-	Button
+	Button,
+	ImageMdx
 }
 
 const blogPostHeaderTopTagClasses = [styles.blogPostHeaderTopTag, "mainBtn"].join(" ")
@@ -46,7 +50,12 @@ export async function getStaticPaths() {
 
   export async function getStaticProps({ params: { slug } }) {
     const post =  getPostBySlug(slug);
-	const mdxSource = await serialize(post.content);
+	const mdxSource = await serialize(post.content, {
+		mdxOptions: {
+	        rehypePlugins: [rehypeCodeTitles, rehypePrism]
+		  }
+	});
+
 
     const postIndex = posts.findIndex((post) => post.slug === slug)
     const prev = posts[postIndex + 1] || null
@@ -81,57 +90,48 @@ export async function getStaticPaths() {
 
 			<article className={styles.blogPost}>
 				<div className="wrapper">
-					<div className='prose'>
-						<header className={styles.blogPostHeader}>
-							<div className={styles.blogPostHeaderTop}>
-								{frontmatter.tags.map(tag => getTagLink(tag)).reduce((prev, curr) => [prev, '', curr])}
-							</div>
-							<h1 className={styles.blogPostTitle}>{frontmatter.title}</h1>
-							<p className={styles.postDesc}>{frontmatter.description}</p>
-							<span className={styles.blogPostHeaderDate}>
-								<Date dateString={frontmatter.date} />
-							</span>
-						</header>
-						<div className="wrapperRead">
-							<MDXRemote {...content}  components = {components} />
-							<PostFooter
-								title={frontmatter.title}
-							/>
-							<div>
-
-								{(next || prev) && (
-									<div>
-									{prev && (
-										<div>
-										<h2>
-											Previous Article
-										</h2>
-										<div>
-											<Link href={`/blog/${prev.slug}`}>{prev.title}</Link>
-										</div>
-										</div>
-									)}
-									{next && (
-										<div>
-										<h2>
-											Next Article
-										</h2>
-										<div>
-											<Link href={`/blog/${next.slug}`}>{next.title}</Link>
-										</div>
-										</div>
-									)}
-									</div>
-								)}
-	  						</div>
-
+					<header className={styles.blogPostHeader}>
+						<div className={styles.blogPostHeaderTop}>
+							{frontmatter.tags.map(tag => getTagLink(tag)).reduce((prev, curr) => [prev, '', curr])}
 						</div>
+						<h1 className={styles.blogPostTitle}>{frontmatter.title}</h1>
+						<p className={styles.postDesc}>{frontmatter.description}</p>
+						<span className={styles.blogPostHeaderDate}>
+							<Date dateString={frontmatter.date} />
+						</span>
+					</header>
+				</div>
+				<div className="wrapperRead">
+					<MDXRemote {...content}  components = {components} />
+					<PostFooter
+						title={frontmatter.title}
+					/>
+					{(next || prev) && (
+					<div className={styles.prevNextPosts}>
+						{prev && (
+							<div className={styles.prevNextPostsItem}>
+								<h6>
+									Предыдущая статья
+								</h6>
+								<h5>
+									<Link className={styles.prevNextPostsItemLink} href={`/blog/${prev.slug}`}>{prev.title}</Link>
+								</h5>
+							</div>
+						)}
+						{next && (
+							<div className={styles.prevNextPostsItem}>
+								<h6>
+									Следующая статья
+								</h6>
+								<h5>
+									<Link className={styles.prevNextPostsItemLink} href={`/blog/${next.slug}`}>{next.title}</Link>
+								</h5>
+							</div>
+						)}
 					</div>
+					)}
 				</div>
 			</article>
-
-
-
 	  </>
     );
   }

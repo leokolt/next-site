@@ -12,6 +12,7 @@
     transition: .35s;
     background-color: var(--color-accent);
     animation: fadeInFromNone .3s ease-in-out;
+    height: 100%;
 }
 
 .slideScreen > .inScreen.close {

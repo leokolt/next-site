@@ -8,13 +8,16 @@ export default function Work({item}) {
             <div className={styles.featuredWorkItemImg}>
                 <Image
                     src={item.image}
-                    width={1000}
-                    height={600}
+                    width={372}
+                    height={350}
                     alt={item.title}
                     style={{
                         width: '100%',
-                        height: 'auto',
+                        height: 'auto'
                     }}
+                    sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
+                    // placeholder="blur"
+                    // blurDataURL='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8w8DwHwAE+QH9Vb8ydQAAAABJRU5ErkJggg=='
                     className={`${item.scroll === true ? styles.scrollImage : ''}`}
                 />
             </div>

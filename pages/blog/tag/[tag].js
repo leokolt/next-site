@@ -34,44 +34,29 @@ export async function getStaticProps({ params: { tag } }) {
 }
 
 
+export default function Tag({ posts, tag, initialDisplayPosts = [] }) {
 
-export default function Tag({ posts, tag }) {
+    /*loadmore*/
+	const initialPostList = 2
+	const incrementInitialPostList = 1;
 
-    const numberPosts = 2
+	const [showPosts, setShowPosts] = useState(initialPostList);
 
-	// State for the list
-	const [list, setList] = useState([...posts.slice(0, numberPosts)])
-
-	// State to trigger oad more
-	const [loadMore, setLoadMore] = useState(false)
-
-	// State of whether there is more to load
-	const [hasMore, setHasMore] = useState(posts.length > numberPosts)
-
-	// Load more button click
 	const handleLoadMore = () => {
-		setLoadMore(true)
-	}
+    	setShowPosts(showPosts + incrementInitialPostList)
+  	}
 
-	// Handle loading more articles
-	useEffect(() => {
-		if (loadMore && hasMore) {
-		const currentLength = list.length
-		const isMore = currentLength < posts.length
-		const nextResults = isMore
-			? posts.slice(currentLength, currentLength + numberPosts)
-			: []
-		setList([...list, ...nextResults])
-		setLoadMore(false)
-		}
-	}, [loadMore, hasMore]) //eslint-disable-line
+	/*search*/
+	const [searchValue, setSearchValue] = useState('')
+	const filteredBlogPosts = posts.filter((frontMatter) => {
+	  const searchContent = frontMatter.title + frontMatter.description + frontMatter.tags.join(' ')
+	  return searchContent.toLowerCase().includes(searchValue.toLowerCase())
+	})
 
-	//Check if there is more
-	useEffect(() => {
-		const isMore = list.length < posts.length
-		setHasMore(isMore)
-	}, [list]) //eslint-disable-line
+	const displayPosts =
+    initialDisplayPosts.length > 0 && !searchValue ? initialDisplayPosts : filteredBlogPosts
 
+	const searchClasses = [styles.search, "stripesBg"].join(" ")
 
     return (
 		<div className={styles.blog}>
@@ -82,14 +67,24 @@ export default function Tag({ posts, tag }) {
 			/>
 			<div className="wrapper">
 				<h1 className="sectionTitle">{firstToUpperCase(translit(tag))}</h1>
+				<div className={searchClasses}>
+					<input
+						aria-label="Search articles"
+						onChange={(e) => setSearchValue(e.target.value)}
+						placeholder='Поиск статей'
+						type='text'
+						className={styles.searchInput}
+					/>
+				</div>
 				<div className={styles.blogInner}>
+					{!filteredBlogPosts.length && 'Ни одной статьи не найдено'}
 					{
-						list.map((post) => (
+						displayPosts.slice(0, showPosts).map((post) => (
 							<Article key={post.slug} post={post} />
 						))
 					}
 				</div>
-				{hasMore ? (
+				{showPosts < posts.length && !searchValue ? (
 					<div><button className="mainBtn loadBtn" onClick={handleLoadMore}>Больше статей</button></div>
 					) : (
 					<div><button className="mainBtn loadBtn" disabled>Больше нет статей</button></div>

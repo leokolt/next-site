@@ -10,8 +10,14 @@ export default function Header() {
 
     const [showSlideScreen, setShowSlideScreen] = useState(false);
 
+    const [endAnimation, setEndAnimation] = useState(false);
+
     const handleClick = () => {
+      if (showSlideScreen) {
+        setEndAnimation(true);
+      } else {
         setShowSlideScreen(!showSlideScreen);
+      }
     };
 
     const menuBtnClasses = [showSlideScreen ? `${styles.menuBtnActive} ${styles.menuBtn}` : `${styles.menuBtn}`, "mainBtn"].join(" ")
@@ -38,6 +44,8 @@ export default function Header() {
                 <SlideScreen
                     onClose={() => setShowSlideScreen(false)}
                     showSlideScreen={showSlideScreen}
+                    endAnimation={endAnimation}
+                    setEndAnimation={setEndAnimation}
                 />}
         </header>
     )
