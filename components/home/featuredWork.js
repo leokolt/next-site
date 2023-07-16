@@ -12,7 +12,7 @@ export default function FeaturedWork({work}) {
                         <Work key={workItem.title} item={workItem} />
                     )).slice(0,6)}
                 </div>
-                <Link href='/work' className='loadBtn mainBtn'>Смотреть все работы</Link>
+                <Link scroll={false} href='/work' className='loadBtn mainBtn'>Смотреть все работы</Link>
             </div>
         </section>
     )

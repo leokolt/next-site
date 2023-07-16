@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import styles from "@/styles/home/posts.module.css"
+import styles from "@/styles/blogPost.module.css"
 
 
 const PostFooter = ({ text, title }) => {
@@ -18,15 +18,15 @@ const PostFooter = ({ text, title }) => {
           await navigator
             .share(shareDetails)
             .then(() =>
-              console.log("Hooray! Your content was shared to tha world")
+              console.log("Готово")
             )
         } catch (error) {
-          console.log(`Oops! I couldn't share to the world because: ${error}`);
+          console.log(`Ничего не получилось потому что ${error}`);
         }
       } else {
         // fallback code
         console.log(
-          "Web share is currently not supported on this browser. Please provide a callback"
+          "Эта функция не поддерживается этим браузером..."
         )
       }
     }

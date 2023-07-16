@@ -14,7 +14,7 @@ export default function RecentPosts({ posts }) {
 					)).slice(0, 4)
 				}
 				</div>
-				<Link href='/blog' className='loadBtn mainBtn'>Читать все статьи</Link>
+				<Link href='/blog' scroll={false} className='loadBtn mainBtn'>Читать все статьи</Link>
 			</div>
 		</section>
 	);

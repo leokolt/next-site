@@ -16,9 +16,12 @@ const Nav = ({handleCloseClick}) => {
                     return (
                         <li key={route} className={`${router.pathname === `/${route.toLowerCase()}`}`}>
                             <Link
-                                href={`/${route.toLowerCase()}`}
-                                onClick={handleCloseClick}
-                                >{routesRu[i]}</Link>
+                            href={`/${route.toLowerCase()}`}
+                            onClick={handleCloseClick}
+                            scroll={false}
+                            >
+                                {routesRu[i]}
+                            </Link>
                         </li>
                     )
                 })}

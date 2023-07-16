@@ -7,7 +7,7 @@ import styles from "@/styles/home/posts.module.css"
 // const getTagLink = (tag) => {
 
 //     return (
-// 		<Link href={`/blog/tag/${tag}`} key={tag}>
+// 		<Link href={`/blog/tag/${tag}`} key={tag} scroll={false}>
 // 			{tag}
 // 		</Link>
 //     );
@@ -16,7 +16,7 @@ import styles from "@/styles/home/posts.module.css"
 export default function Article({ post }) {
 	return (
 		<article className={styles.article}>
-			<Link href={`/blog/${post.slug}`}>
+			<Link href={`/blog/${post.slug}`} scroll={false}>
 				<h3 className={styles.articleTitle}>
 					{post.title}
 				</h3>

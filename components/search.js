@@ -55,7 +55,7 @@ export default function Search() {
 						<ul className={styles.searchResults}>
 							{results.map(({ slug, title }) => (
 								<li key={slug} className={styles.searchResultsItem}>
-									<Link href="/blog/[slug]" as={`/blog/${slug}`} className={styles.searchResultsItemLink}>
+									<Link href="/blog/[slug]" as={`/blog/${slug}`} scroll={false} className={styles.searchResultsItemLink}>
 										{title}
 									</Link>
 								</li>

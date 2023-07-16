@@ -6,11 +6,20 @@ import { ThemeProvider } from 'next-themes'
 import localFont from 'next/font/local'
 import Layout from '@/components/layout'
 
-import PageTransition from '@/components/withTransition'
+// @ts-ignore
+import { PageTransition } from 'next-page-transitions'
 
-// const font = Rubik({
-// 	subsets: ['latin', 'cyrillic'],
+// const fontNew = localFont({
+// 	src: [
+// 		{
+// 		  path: '../public/fonts/Steinbeck.woff2',
+// 		  weight: '400',
+
+// 		}
+// 	]
 // })
+
+
 
 const fontText = localFont({
 	src: [
@@ -37,7 +46,7 @@ const fontText = localFont({
 });
 
 
-export default function App({ Component, pageProps, router }) {
+export default function App({ Component, pageProps }) {
 
 	return (
 
@@ -47,12 +56,29 @@ export default function App({ Component, pageProps, router }) {
 					p, div, h1, h2, h3, h4, h5, h6, span, time, a, input, textarea, button {
 						font-family: ${fontText.style.fontFamily};
 					}
+					.page-transition-enter {
+						opacity: 0;
+						transform: translateY(20px);
+					}
+					.page-transition-enter-active {
+						opacity: 1;
+						transform: translateY(0);
+						transition: all 300ms;
+					}
+					.page-transition-exit {
+						opacity: 1;
+						transform: translateX(0);
+					}
+					.page-transition-exit-active {
+						opacity: 0;
+						transition: all 300ms;
+						transform: translateX(20px);
+					}
 				`}</style>
 				<NextNProgress color="#F65F59"/>
-				<PageTransition Component={Component}
-        pageProps={pageProps}
-        router={router} />
-
+				<PageTransition timeout={300} classNames="page-transition">
+					<Component {...pageProps} />
+				</PageTransition>
 			</Layout>
 		</ThemeProvider>
 

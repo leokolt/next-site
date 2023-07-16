@@ -2,7 +2,7 @@ import { useState, useEffect } from "react"
 import Seo from "@/components/global/seo";
 import Article from '@/components/article';
 //import Search from '@/components/search';
-import styles from "@/styles/home/posts.module.css"
+import styles from "@/styles/blogWorkTagPage.module.css"
 
 import generateRssFeed from "@/lib/generateRssFeed";
 import { getAllPosts } from '@/lib/getAllData';

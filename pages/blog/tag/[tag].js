@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react"
 import {getAllPosts, getAllPostsByTag} from "@/lib/getAllData";
 import Seo from "@/components/global/seo";
 import Article from "@/components/article";
-import styles from "@/styles/home/posts.module.css"
+import styles from "@/styles/blogWorkTagPage.module.css"
 
 import { firstToUpperCase, translit } from "@/lib/utils";
 

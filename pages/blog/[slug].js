@@ -7,7 +7,7 @@ import rehypeCodeTitles from 'rehype-code-titles'
 
 import Link from 'next/link'
 import Date from '@/lib/date';
-import styles from "@/styles/home/posts.module.css"
+import styles from "@/styles/blogPost.module.css"
 import PostFooter from "@/components/extra/postFooter"
 
 import Button from '@/components/mdx/button'
@@ -25,7 +25,7 @@ const blogPostHeaderTopTagClasses = [styles.blogPostHeaderTopTag, "mainBtn"].joi
 
 const getTagLink = (tag) => {
 	return (
-		<Link className={blogPostHeaderTopTagClasses} href={`/blog/tag/${tag}`} key={tag}>
+		<Link scroll={false} className={blogPostHeaderTopTagClasses} href={`/blog/tag/${tag}`} key={tag}>
 			{translit(tag)}
 		</Link>
 	);
@@ -114,7 +114,7 @@ export async function getStaticPaths() {
 									Предыдущая статья
 								</h6>
 								<h5>
-									<Link className={styles.prevNextPostsItemLink} href={`/blog/${prev.slug}`}>{prev.title}</Link>
+									<Link scroll={false} className={styles.prevNextPostsItemLink} href={`/blog/${prev.slug}`}>{prev.title}</Link>
 								</h5>
 							</div>
 						)}
@@ -124,7 +124,7 @@ export async function getStaticPaths() {
 									Следующая статья
 								</h6>
 								<h5>
-									<Link className={styles.prevNextPostsItemLink} href={`/blog/${next.slug}`}>{next.title}</Link>
+									<Link scroll={false} className={styles.prevNextPostsItemLink} href={`/blog/${next.slug}`}>{next.title}</Link>
 								</h5>
 							</div>
 						)}
