@@ -7,6 +7,7 @@ const nextConfig = {
   webpack: (config, { isServer }) => {
     if (isServer) {
       require('./lib/cache')
+      //require('./lib/generateSitemap')
     }
 
     return config

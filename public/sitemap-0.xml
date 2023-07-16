@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:mobile="http://www.google.com/schemas/sitemap-mobile/1.0" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
+<url><loc>http://localhost:3000</loc><lastmod>2023-07-16T14:20:40.144Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>http://localhost:3000/blog</loc><lastmod>2023-07-16T14:20:40.145Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>http://localhost:3000/work</loc><lastmod>2023-07-16T14:20:40.145Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>http://localhost:3000/blog/tag/functions</loc><lastmod>2023-07-16T14:20:40.145Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>http://localhost:3000/blog/tag/javascript</loc><lastmod>2023-07-16T14:20:40.145Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>http://localhost:3000/blog/tag/sluchai-na-rabote</loc><lastmod>2023-07-16T14:20:40.145Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>http://localhost:3000/blog/tag/Yola</loc><lastmod>2023-07-16T14:20:40.145Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>http://localhost:3000/blog/tag/джавик</loc><lastmod>2023-07-16T14:20:40.145Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>http://localhost:3000/blog/tag/dzhavik</loc><lastmod>2023-07-16T14:20:40.145Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>http://localhost:3000/blog/tag/klassnyi-chlen</loc><lastmod>2023-07-16T14:20:40.145Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>http://localhost:3000/blog/tag/solidjs</loc><lastmod>2023-07-16T14:20:40.145Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>http://localhost:3000/blog/tag/tailwindcss</loc><lastmod>2023-07-16T14:20:40.145Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>http://localhost:3000/blog/tag/styling</loc><lastmod>2023-07-16T14:20:40.145Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>http://localhost:3000/blog/tag/variables</loc><lastmod>2023-07-16T14:20:40.145Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>http://localhost:3000/blog/tag/python</loc><lastmod>2023-07-16T14:20:40.145Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>http://localhost:3000/blog/functions-for-beginners</loc><lastmod>2023-07-16T14:20:40.145Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>http://localhost:3000/blog/solidjs-for-beginners</loc><lastmod>2023-07-16T14:20:40.145Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>http://localhost:3000/blog/tailwind-setup</loc><lastmod>2023-07-16T14:20:40.145Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>http://localhost:3000/blog/variables-in-python</loc><lastmod>2023-07-16T14:20:40.145Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+</urlset>
